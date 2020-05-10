@@ -3,6 +3,7 @@ import requests
 import config
 import json
 import re
+import time
 
 
 query = 'audi etron OR audi e-tron'
@@ -13,7 +14,7 @@ def fetch_latest_tweets(query, max_id):
     payload = {
         'q': query,
         'result_type': 'recent',
-        'count': 3,
+        'count': 20,
         'include_entities': 'false',
         'tweet_mode': 'extended',
     }
@@ -86,9 +87,11 @@ def set_latest_saved_index(index):
 latest_saved_index = get_latest_saved_index()
 max_id = None
 
-# if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 100 tweets => saving 5000 tweets at max
-for i in range(2):
+# if there has been a lot of tweets or we are doing an inital fetch we will at most do 10 requests a 100 tweets => saving 1000 tweets at max
+for i in range(10):
 
+    print("Sleep for 5 seconds.")
+    time.sleep(5)
     result = fetch_latest_tweets(query, max_id)
 
     if result['most_recent_tweet_id'] == latest_saved_index:
@@ -104,8 +107,8 @@ for i in range(2):
     if result["max_id"] < latest_saved_index:
         # 1. remove all tweets <= the latest saved index
         fetched_tweets = result["tweets"]
-        fetched_tweets_more_recent_than_last_saved = filter(
-            lambda tweet: tweet["id"] <= latest_saved_index, fetched_tweets)
+        fetched_tweets_more_recent_than_last_saved = list(filter(
+            lambda tweet: tweet["id"] > latest_saved_index, fetched_tweets))
         # 2. save remaining in database
         save_data_to_db(fetched_tweets_more_recent_than_last_saved)
         # 3. exit for loop
