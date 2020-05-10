@@ -87,11 +87,13 @@ def set_latest_saved_index(index):
 latest_saved_index = get_latest_saved_index()
 max_id = None
 
-# if there has been a lot of tweets or we are doing an inital fetch we will at most do 10 requests a 100 tweets => saving 1000 tweets at max
-for i in range(10):
-
-    print("Sleep for 5 seconds.")
-    time.sleep(5)
+# if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
+for i in range(50):
+    # rate limiting
+    if i > 0:
+        print("Sleep for 5 seconds.")
+        time.sleep(5)
+    # fetch tweets
     result = fetch_latest_tweets(query, max_id)
 
     if result['most_recent_tweet_id'] == latest_saved_index:
