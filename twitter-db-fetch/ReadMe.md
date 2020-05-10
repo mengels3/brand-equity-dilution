@@ -14,6 +14,7 @@ pip install -r requirements.txt
 ```shell
 git update-index --assume-unchanged config.py
 ```
-
+ ## Knowledge
+ - Twitter API gives us 450 requests per 15 Minutes and gives us a maximum of 100 tweets per request which makes 45000 tweets/15 minutes (https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets).
 
 
