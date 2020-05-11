@@ -81,43 +81,44 @@ def set_latest_saved_index(index):
     f.close()
 
 
+def main(latest_saved_index, max_id):
+	# if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
+	for i in range(50):
+	    # rate limiting
+	    if i > 0:
+	        print("Sleep for 5 seconds.")
+	        time.sleep(5)
+	    # fetch tweets
+	    result = fetch_latest_tweets(query, max_id)
+
+	    if result['most_recent_tweet_id'] == latest_saved_index:
+	        print("There are no new tweets. Database is already up to date.")
+	        break
+
+	    # extract the id of the most recent tweet  of the first fetch to update lastest_saved_index
+	    if i == 0:
+	        set_latest_saved_index(result["most_recent_tweet_id"])
+
+	    # if the max_id index (which determines that we want to fetch tweets older than or equal than this id) is smaller than
+	    # the index of the oldest tweet saved, than we are fetching data we already have stored in our database!
+	    if result["max_id"] < latest_saved_index:
+	        # 1. remove all tweets <= the latest saved index
+	        fetched_tweets = result["tweets"]
+	        fetched_tweets_more_recent_than_last_saved = list(filter(
+	            lambda tweet: tweet["id"] > latest_saved_index, fetched_tweets))
+	        # 2. save remaining in database
+	        save_data_to_db(fetched_tweets_more_recent_than_last_saved)
+	        # 3. exit for loop
+	        break
+	    else:
+	        # just save items and set max_id for pagination
+	        max_id = result["max_id"]
+	        save_data_to_db(result["tweets"])
+
+
 # MAIN
 
-# init variables
-latest_saved_index = get_latest_saved_index()
-max_id = None
+if __name__ == "__main__":
 
-# if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
-for i in range(50):
-    # rate limiting
-    if i > 0:
-        print("Sleep for 5 seconds.")
-        time.sleep(5)
-    # fetch tweets
-    result = fetch_latest_tweets(query, max_id)
+	main(get_latest_saved_index(), None)
 
-    if result['most_recent_tweet_id'] == latest_saved_index:
-        print("There are no new tweets. Database is already up to date.")
-        break
-
-    # extract the id of the most recent tweet  of the first fetch to update lastest_saved_index
-    if i == 0:
-        set_latest_saved_index(result["most_recent_tweet_id"])
-
-    # if the max_id index (which determines that we want to fetch tweets older than or equal than this id) is smaller than
-    # the index of the oldest tweet saved, than we are fetching data we already have stored in our database!
-    if result["max_id"] < latest_saved_index:
-        # 1. remove all tweets <= the latest saved index
-        fetched_tweets = result["tweets"]
-        fetched_tweets_more_recent_than_last_saved = list(filter(
-            lambda tweet: tweet["id"] > latest_saved_index, fetched_tweets))
-        # 2. save remaining in database
-        save_data_to_db(fetched_tweets_more_recent_than_last_saved)
-        # 3. exit for loop
-        break
-    else:
-        # just save items and set max_id for pagination
-        max_id = result["max_id"]
-        save_data_to_db(result["tweets"])
-
-    i += 1
