@@ -120,7 +120,7 @@ def main():
 
 	print('\n\nNow your input ("%s") will be analyzed:' %custom_input)
 	custom_tokens = remove_noise(word_tokenize(custom_input))
-	print(classifier.classify(dict([token, True] for token in custom_tokens)))
+	print("Result: ", classifier.classify(dict([token, True] for token in custom_tokens)))
 
 if __name__ == '__main__':
 	main()
