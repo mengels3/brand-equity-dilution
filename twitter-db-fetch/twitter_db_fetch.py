@@ -111,7 +111,7 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
     for i in range(fetch_iterations):
             # rate limiting
         if i > 0:
-            print("Sleep for " + fetch_sleep_timeout_in_sec + " seconds.")
+            print("Sleep for " + str(fetch_sleep_timeout_in_sec) + " seconds.")
             time.sleep(fetch_sleep_timeout_in_sec)
         # fetch tweets
         result = fetch_latest_tweets(query, max_id, fetch_batch_size)
