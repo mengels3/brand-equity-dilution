@@ -98,15 +98,6 @@ def transform_tweet(tweet):
     }
 
 
-def save_data_to_db(tweets):
-    db_connection_string = config.secrets["db-connection-string"]
-    client = MongoClient(db_connection_string)
-    tweet_collection = client["coins-brand-equity-dilution-database"].tweets
-
-    tweet_collection.insert_many(tweets)
-    print('Successfully saved ' + str(len(tweets)) + ' tweets to database.')
-
-
 def main(latest_saved_index, max_id):
         # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
     for i in range(50):
@@ -135,14 +126,14 @@ def main(latest_saved_index, max_id):
             fetched_tweets_more_recent_than_last_saved = list(filter(
                 lambda tweet: int(tweet["id_str"]) > latest_saved_index, fetched_tweets))
             # 2. save remaining in database
-            save_data_to_db(fetched_tweets_more_recent_than_last_saved)
+            dbClient.saveTweets(fetched_tweets_more_recent_than_last_saved)
             print("-> All new tweets have been successfully fetched and stored.")
             # 3. exit for loop
             break
         else:
             # just save items and set max_id for pagination
             max_id = result["max_id"]
-            save_data_to_db(result["tweets"])
+            dbClient.saveTweets(result["tweets"])
 
 
 # MAIN

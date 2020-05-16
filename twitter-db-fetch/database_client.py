@@ -18,3 +18,7 @@ class DatabaseClient:
         max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
         print("Most recent tweet in database has id " + str(max_id) + ".")
         return max_id
+
+    def saveTweets(self, tweets):
+        self.tweet_collection.insert_many(tweets)
+        print('Successfully saved ' + str(len(tweets)) + ' tweets to database.')
