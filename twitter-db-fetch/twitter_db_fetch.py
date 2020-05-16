@@ -5,7 +5,9 @@ import config
 import json
 import re
 import time
+from database_client import DatabaseClient
 
+dbClient = DatabaseClient()
 
 query = 'audi etron OR audi e-tron'
 
@@ -105,37 +107,6 @@ def save_data_to_db(tweets):
     print('Successfully saved ' + str(len(tweets)) + ' tweets to database.')
 
 
-# return -1 if there have not been stored tweets yet, otherwise the (integer) id of the latest saved tweet
-def get_latest_saved_index():
-    print('Retrieving index of most recent tweet stored in database.')
-    f = open('last_saved_tweet_index.txt', 'r')
-    index = f.readline()
-    if index is "":
-        return -1
-    else:
-        return int(index)
-
-
-def get_latest_saved_index_from_db():
-    db_connection_string = config.secrets["db-connection-string"]
-    client = MongoClient(db_connection_string)
-    tweet_collection = client["coins-brand-equity-dilution-database"].tweets
-
-    last_saved_index = tweet_collection.find_one(
-        sort=[('id', pymongo.DESCENDING)])
-
-    print(last_saved_index)
-    print('Retrieving index of most recent tweet stored in database: ' +
-          str(last_saved_index))
-
-
-def set_latest_saved_index(index):
-    print('Updating index of most recent tweet stored in database.')
-    f = open('last_saved_tweet_index.txt', 'w')
-    f.write(str(index))
-    f.close()
-
-
 def main(latest_saved_index, max_id):
         # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
     for i in range(50):
@@ -149,10 +120,6 @@ def main(latest_saved_index, max_id):
         if result['most_recent_tweet_id'] == latest_saved_index:
             print("There are no new tweets. Database is already up to date.")
             break
-
-        # extract the id of the most recent tweet  of the first fetch to update lastest_saved_index
-        if i == 0:
-            set_latest_saved_index(result["most_recent_tweet_id"])
 
         # if there is no more data do be fetched (because we collected all tweets of the last 7 days) exit the loop
         if result["more_data_available"] == False:
@@ -182,4 +149,4 @@ def main(latest_saved_index, max_id):
 
 if __name__ == "__main__":
 
-    main(get_latest_saved_index(), None)
+    main(dbClient.getLatestTweetId(), None)

@@ -1,11 +1,13 @@
 from pymongo import MongoClient
 import pymongo
 import config
+from database_client import DatabaseClient
 
-db_connection_string = config.secrets["db-connection-string"]
-client = MongoClient(db_connection_string)
-tweet_collection = client["coins-brand-equity-dilution-database"].tweets
+dbClient = DatabaseClient()
 
-tweets = list(tweet_collection.find())
+tweets = list(dbClient.tweet_collection.find())
 print("Currently there are " + str(len(tweets)) +
       " tweets stored in the database.")
+
+max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
+print("Id of latest fetched tweet is " + str(max_id) + ".")
