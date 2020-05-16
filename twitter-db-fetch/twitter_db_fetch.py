@@ -8,16 +8,15 @@ import time
 from database_client import DatabaseClient
 
 dbClient = DatabaseClient()
+fetch_sleep_timeout_in_sec = 2
 
-query = 'audi etron OR audi e-tron'
 
-
-def fetch_latest_tweets(query, max_id):
+def fetch_latest_tweets(query, max_id, batch_size):
     # url-encoded payload
     payload = {
         'q': query,
         'result_type': 'recent',
-        'count': 50,
+        'count': batch_size,
         'include_entities': 'false',
         'tweet_mode': 'extended',
     }
@@ -97,19 +96,28 @@ def transform_tweet(tweet):
         }
     }
 
+# TODO consider fetch_batch_size
 
-def main(latest_saved_index, max_id):
-        # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
-    for i in range(50):
-        # rate limiting
+
+def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_size):
+
+    print("\n------ Populating database collection '" + collection + "' for query '" +
+          query + "' with at most " + str(fetch_iterations*fetch_batch_size) + " tweets. ------")
+
+    latest_saved_index = dbClient.getLatestTweetId(collection)
+    max_id = None
+
+    # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
+    for i in range(fetch_iterations):
+            # rate limiting
         if i > 0:
-            print("Sleep for 1 seconds.")
-            time.sleep(1)
+            print("Sleep for " + fetch_sleep_timeout_in_sec + " seconds.")
+            time.sleep(fetch_sleep_timeout_in_sec)
         # fetch tweets
-        result = fetch_latest_tweets(query, max_id)
+        result = fetch_latest_tweets(query, max_id, fetch_batch_size)
 
         if result['most_recent_tweet_id'] == latest_saved_index:
-            print("There are no new tweets. Database is already up to date.")
+            print("-> There are no new tweets. Collection is already up to date.")
             break
 
         # if there is no more data do be fetched (because we collected all tweets of the last 7 days) exit the loop
@@ -126,18 +134,24 @@ def main(latest_saved_index, max_id):
             fetched_tweets_more_recent_than_last_saved = list(filter(
                 lambda tweet: int(tweet["id_str"]) > latest_saved_index, fetched_tweets))
             # 2. save remaining in database
-            dbClient.saveTweets(fetched_tweets_more_recent_than_last_saved)
+            dbClient.saveDocuments(
+                collection, fetched_tweets_more_recent_than_last_saved)
             print("-> All new tweets have been successfully fetched and stored.")
             # 3. exit for loop
             break
         else:
             # just save items and set max_id for pagination
             max_id = result["max_id"]
-            dbClient.saveTweets(result["tweets"])
+            dbClient.saveDocuments(collection, result["tweets"])
 
 
-# MAIN
+def main():
+    populateTweetsInDatabase('audi_etron', 'audi etron OR audi e-tron', 50, 50)
+    populateTweetsInDatabase('audi', 'audi', 50, 50)
+    populateTweetsInDatabase(
+        'google_stadia', 'google stadia or stadia', 50, 50)
+    populateTweetsInDatabase('google', 'google', 50, 50)
 
+    # MAIN
 if __name__ == "__main__":
-
-    main(dbClient.getLatestTweetId(), None)
+    main()
