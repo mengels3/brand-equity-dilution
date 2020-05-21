@@ -104,7 +104,7 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
           query + "' with at most " + str(fetch_iterations*fetch_batch_size) + " tweets. ------")
 
     latest_saved_index = dbClient.getLatestTweetId(
-        collection, 3, 10)
+        collection, 5, 10)
     max_id = None
 
     # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
@@ -135,7 +135,7 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
                 lambda tweet: int(tweet["id_str"]) > latest_saved_index, fetched_tweets))
             # 2. save remaining in database
             saveTweets(
-                collection, fetched_tweets_more_recent_than_last_saved, 3, 5, dbClient)
+                collection, fetched_tweets_more_recent_than_last_saved, 5, 10, dbClient)
 
             print("-> All new tweets have been successfully fetched and stored.")
             # 3. exit for loop
@@ -143,7 +143,7 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
         else:
             # just save items and set max_id for pagination
             max_id = result["max_id"]
-            saveTweets(collection, result["tweets"], 3, 5, dbClient)
+            saveTweets(collection, result["tweets"], 5, 10, dbClient)
 
 
 def saveTweets(collection, tweets, retries, timeoutSec, dbClient):
