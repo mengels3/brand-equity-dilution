@@ -7,7 +7,6 @@ import re
 import time
 from database_client import DatabaseClient
 
-dbClient = DatabaseClient()
 fetch_sleep_timeout_in_sec = 3
 
 
@@ -99,12 +98,13 @@ def transform_tweet(tweet):
 # TODO consider fetch_batch_size
 
 
-def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_size):
+def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_size, dbClient):
 
     print("\n------ Populating database collection '" + collection + "' for query '" +
           query + "' with at most " + str(fetch_iterations*fetch_batch_size) + " tweets. ------")
 
-    latest_saved_index = dbClient.getLatestTweetId(collection)
+    latest_saved_index = dbClient.getLatestTweetId(
+        collection, 3, 5)
     max_id = None
 
     # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
@@ -134,17 +134,8 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
             fetched_tweets_more_recent_than_last_saved = list(filter(
                 lambda tweet: int(tweet["id_str"]) > latest_saved_index, fetched_tweets))
             # 2. save remaining in database
-            for i in range(3):
-                try:
-                    dbClient.saveDocuments(
-                        collection, fetched_tweets_more_recent_than_last_saved)
-                except Exception as e:
-                    if i == 3:
-                        raise e
-                    print(
-                        'There was an error with writing tweets to database: ' + str(e))
-                    print('Sleep for 5 seconds and try again.')
-                    time.sleep(5)
+            saveTweets(
+                collection, fetched_tweets_more_recent_than_last_saved, 3, 5, dbClient)
 
             print("-> All new tweets have been successfully fetched and stored.")
             # 3. exit for loop
@@ -152,23 +143,44 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
         else:
             # just save items and set max_id for pagination
             max_id = result["max_id"]
-            dbClient.saveDocuments(collection, result["tweets"])
+            saveTweets(collection, result["tweets"], 3, 5, dbClient)
+
+
+def saveTweets(collection, tweets, retries, timeoutSec, dbClient):
+    for i in range(retries):
+        try:
+            dbClient.saveDocuments(
+                collection, tweets)
+            break
+        except Exception as e:
+            if i == retries-1:
+                raise e
+            print(
+                'There was an error with writing tweets to database (try ' + str(i+1) + '/' + str(retries) + '): ' + str(e))
+            print('Sleep for ' + str(timeoutSec) + ' seconds and try again.')
+            time.sleep(timeoutSec)
 
 
 def main():
+    dbClient = DatabaseClient()
+    print('DEBUG: After db client init.')
+    # maybe wait for connection?
+    time.sleep(1)
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
-    populateTweetsInDatabase('audi_etron', 'audi etron OR audi e-tron', 50, 40)
-    populateTweetsInDatabase('audi', 'audi', 50, 50)
     populateTweetsInDatabase(
-        'google_stadia', 'google stadia OR stadia', 50, 40)
-    populateTweetsInDatabase('google', 'google', 50, 40)
-    populateTweetsInDatabase('volkswagen', 'vw OR volkswagen', 50, 40)
+        'audi_etron', 'audi etron OR audi e-tron', 50, 40, dbClient)
+    populateTweetsInDatabase('audi', 'audi', 50, 50, dbClient)
     populateTweetsInDatabase(
-        'volkswagen_id3', 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3', 50, 40)
+        'google_stadia', 'google stadia OR stadia', 50, 40, dbClient)
+    populateTweetsInDatabase('google', 'google', 50, 40, dbClient)
     populateTweetsInDatabase(
-        'mercedes', 'mercedes OR mercedes-benz', 50, 40)
+        'volkswagen', 'vw OR volkswagen', 50, 40, dbClient)
     populateTweetsInDatabase(
-        'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 50, 40)
+        'volkswagen_id3', 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3', 50, 40, dbClient)
+    populateTweetsInDatabase(
+        'mercedes', 'mercedes OR mercedes-benz', 50, 40, dbClient)
+    populateTweetsInDatabase(
+        'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 50, 40, dbClient)
 
 
 if __name__ == "__main__":
