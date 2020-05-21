@@ -164,8 +164,8 @@ def saveTweets(collection, tweets, retries, timeoutSec, dbClient):
 def main():
     start = time.time()
     dbClient = DatabaseClient()
+    # for some reason we have to do this once (maybe to establish connection but dunno)
     dbClient.getLatestTweetId('audi_etron', 1, 1)
-    print('DEBUG: After db client init.')
     # maybe wait for connection?
     time.sleep(1)
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
