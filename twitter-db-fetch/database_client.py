@@ -15,7 +15,8 @@ class DatabaseClient:
         tweets = None
         for i in range(retries):
             try:
-                tweets = list(self.database[collection_name].find())
+                collection = self.database[collection_name]
+                tweets = list(collection.find({}))
                 break
             except Exception as e:
                 if i == retries-1:
@@ -39,6 +40,7 @@ class DatabaseClient:
         return list(self.database[collection_name].find())
 
     def saveDocuments(self, collection_name, documents):
-        self.database[collection_name].insert_many(documents)
+        collection = self.database[collection_name]
+        collection.insert_many(documents)
         print('Successfully saved ' + str(len(documents)) +
               ' documents to database ' + collection_name + '.')

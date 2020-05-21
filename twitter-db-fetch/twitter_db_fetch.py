@@ -162,7 +162,9 @@ def saveTweets(collection, tweets, retries, timeoutSec, dbClient):
 
 
 def main():
+    start = time.time()
     dbClient = DatabaseClient()
+    dbClient.getLatestTweetId('audi_etron', 1, 1)
     print('DEBUG: After db client init.')
     # maybe wait for connection?
     time.sleep(1)
@@ -181,6 +183,8 @@ def main():
         'mercedes', 'mercedes OR mercedes-benz', 50, 40, dbClient)
     populateTweetsInDatabase(
         'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 50, 40, dbClient)
+    end = time.time()
+    print('Script took ' + str(end - start) + ' seconds to execute.')
 
 
 if __name__ == "__main__":
