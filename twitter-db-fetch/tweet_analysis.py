@@ -5,7 +5,7 @@ from database_client import DatabaseClient
 
 dbClient = DatabaseClient()
 
-collection = 'audi_etron'
+collection = 'audi'
 
 tweets = dbClient.getAllDocuments(collection)
 print("Currently there are " + str(len(tweets)) +

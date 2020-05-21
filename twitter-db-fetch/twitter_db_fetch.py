@@ -105,6 +105,9 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
 
     latest_saved_index = dbClient.getLatestTweetId(
         collection, 5, 10)
+    print('Wait for 10 seconds until storing documents to collection.')
+    time.sleep(10)
+
     max_id = None
 
     # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max

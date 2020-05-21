@@ -16,7 +16,6 @@ class DatabaseClient:
         for i in range(retries):
             try:
                 collection = self.database[collection_name]
-                time.sleep(timeoutSec)
                 tweets = list(collection.find({}))
                 break
             except Exception as e:
