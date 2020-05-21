@@ -1,0 +1,584 @@
+python: can't open file '/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter-db-fetch.py': [Errno 2] No such file or directory
+python: can't open file '/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter-db-fetch.py': [Errno 2] No such file or directory
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1263418232393863171.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263418232393863171.
+Successfully fetched 40 tweets.
+Successfully saved 1 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263418985862721536.
+Successfully fetched 50 tweets.
+Successfully saved 50 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 50 tweets.
+Successfully saved 24 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+Most recent tweet in google_stadia collection has id 1263418442377572352.
+Successfully fetched 40 tweets.
+Successfully saved 1 documents to database google_stadia.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+There was an error with reading from database (try 1/3): Error=16500, Details='
+Sleep for 5 seconds and try again.
+There was an error with reading from database (try 2/3): Error=16500, Details='
+Sleep for 5 seconds and try again.
+Traceback (most recent call last):
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 191, in <module>
+    main()
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 177, in main
+    populateTweetsInDatabase('google', 'google', 50, 40, dbClient)
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 107, in populateTweetsInDatabase
+    collection, 3, 5)
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/database_client.py", line 23, in getLatestTweetId
+    raise e
+pymongo.errors.OperationFailure: Error=16500, Details='
+Initalized database client.
+No tweets stored in collection audi_etron
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263421536121360385.
+Successfully fetched 50 tweets.
+Successfully saved 9 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+Most recent tweet in google_stadia collection has id 1263419051013017602.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+There was an error with reading from database (try 1/3): Error=16500, Details='
+Sleep for 5 seconds and try again.
+Most recent tweet in google collection has id 1263419031526109184.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+There was an error with writing tweets to database (try 1/3): batch op errors occurred
+Sleep for 5 seconds and try again.
+There was an error with writing tweets to database (try 2/3): batch op errors occurred
+Sleep for 5 seconds and try again.
+Traceback (most recent call last):
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 191, in <module>
+    main()
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 177, in main
+    populateTweetsInDatabase('google', 'google', 50, 40, dbClient)
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 146, in populateTweetsInDatabase
+    saveTweets(collection, result["tweets"], 3, 5, dbClient)
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 157, in saveTweets
+    raise e
+pymongo.errors.BulkWriteError: batch op errors occurred
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263421787553116160.
+Successfully fetched 50 tweets.
+Successfully saved 13 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+Most recent tweet in google_stadia collection has id 1263419051013017602.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+Most recent tweet in google collection has id 1263421885485707264.
+Successfully fetched 40 tweets.
+There was an error with writing tweets to database (try 1/3): batch op errors occurred
+Sleep for 5 seconds and try again.
+There was an error with writing tweets to database (try 2/3): batch op errors occurred
+Sleep for 5 seconds and try again.
+Traceback (most recent call last):
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 191, in <module>
+    main()
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 177, in main
+    populateTweetsInDatabase('google', 'google', 50, 40, dbClient)
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 146, in populateTweetsInDatabase
+    saveTweets(collection, result["tweets"], 3, 5, dbClient)
+  File "/home/pi/git/github/brand-equity-dilution/twitter-db-fetch/twitter_db_fetch.py", line 157, in saveTweets
+    raise e
+pymongo.errors.BulkWriteError: batch op errors occurred
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263422045762838528.
+Successfully fetched 50 tweets.
+Successfully saved 11 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+Most recent tweet in google_stadia collection has id 1263419051013017602.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+Most recent tweet in google collection has id 1263422101375066112.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 19 documents to database google.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 2000 tweets. ------
+Most recent tweet in volkswagen collection has id 1263417314508189696.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 21 documents to database volkswagen.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 2000 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1263211743632900096.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 2000 tweets. ------
+Most recent tweet in mercedes collection has id 1263417349098680321.
+Successfully fetched 40 tweetsInitalized database client.
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263422298134102017.
+Successfully fetched 50 tweets.
+Successfully saved 10 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+There was an error with reading from database (try 1/3): Error=16500, Details='
+Sleep for 5 seconds and try again.
+Most recent tweet in google_stadia collection has id 1263419051013017602.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+Most recent tweet in google collection has id 1263422352727171077.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 28 documents to database google.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 2000 tweets. ------
+Most recent tweet in volkswagen collection has id 1263422508704776192.
+Successfully fetched 40 tweets.
+Successfully saved 13 documents to database volkswagen.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 2000 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1263211743632900096.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 2000 tweets. ------
+There was an error with reading from database (try 1/3): Error=16500, Details='Microsoft.Azure.Cosmos.CosmosException : Message: {"Errors":["Request rate is large. More Request Units may be needed, so no changes were made. Please retry this request later. Learn more: http://aka.ms/cosmosdb-error-429"]}
+ActivityId: 72854ab3-73fd-4833-b41f-274bf5a64a0e, Request URI: /apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, RequestStats: 
+RequestStartTime: 2020-05-21T10:54:10.4835141Z, RequestEndTime: 2020-05-21T10:54:10.4935646Z,  Number of regions attempted:1
+ResponseTime: 2020-05-21T10:54:10.4935646Z, StoreResult: StorePhysicalAddress: rntbd://cdb-ms-prod-westeurope1-fd15.documents.azure.com:14069/apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, LSN: 53113, GlobalCommittedLsn: 53112, PartitionKeyRangeId: , IsValid: True, StatusCode: 429, SubStatusCode: 3200, RequestCharge: 0.38, ItemLSN: -1, SessionToken: , UsingLocalLSN: True, TransportException: null, ResourceType: Collection, OperationType: Read
+, SDK: Microsoft.Azure.Documents.Common/2.11.0, {"RequestStartTimeUtc":"2020-05-21T10:54:10.4833128Z","RequestEndTimeUtc":"2020-05-21T10:54:10.4973423Z","RequestLatency":"00:00:00.0140295","IsCpuOverloaded":false,"NumberRegionsAttempted":1,"ResponseStatisticsList":[],"AddressResolutionStatistics":[{"StartTime":"2020-05-21T10:54:10.4833951Z","EndTime":"2020-05-21T10:54:10.4973423Z","TargetEndpoint":"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes"}],"SupplementalResponseStatistics":[],"FailedReplicas":[],"RegionsContacted":[],"ContactedReplicas":[]}, Windows/10.0.14393 cosmos-netstandard-sdk/3.3.2
+StatusCode = TooManyRequests;
+SubStatusCode = 3200;
+ActivityId = 72854ab3-73fd-4833-b41f-274bf5a64a0e;
+RequestCharge = 0.38;
+{"Summary":{"StartUtc":"2020-05-21T10:54:10.4980354Z","ElapsedTime":"Timer Never Stopped.","UserAgent":"cosmos-netstandard-sdk/3.6.0|3.3.2|52378|X64|Microsoft Windows 10.0.14393 |.NET Core 4.6.28207.03|","TotalRequestCount":1,"FailedRequestCount":1},"Context":[{"Id":"PointOperationStatistics","ActivityId":"72854ab3-73fd-4833-b41f-274bf5a64a0e","StatusCode":429,"SubStatusCode":0,"RequestCharge":0.38,"RequestUri":null,"ErrorMessage":"Microsoft.Azure.Documents.DocumentClientException: Message: {\"Errors\":[\"Request rate is large. More Request Units may be needed, so no changes were made. Please retry this request later. Learn more: http://aka.ms/cosmosdb-error-429\"]}ActivityId: 72854ab3-73fd-4833-b41f-274bf5a64a0e, Request URI: /apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, RequestStats: RequestStartTime: 2020-05-21T10:54:10.4835141Z, RequestEndTime: 2020-05-21T10:54:10.4935646Z,  Number of regions attempted:1ResponseTime: 2020-05-21T10:54:10.4935646Z, StoreResult: StorePhysicalAddress: rntbd://cdb-ms-prod-westeurope1-fd15.documents.azure.com:14069/apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, LSN: 53113, GlobalCommittedLsn: 53112, PartitionKeyRangeId: , IsValid: True, StatusCode: 429, SubStatusCode: 3200, RequestCharge: 0.38, ItemLSN: -1, SessionToken: , UsingLocalLSN: True, TransportException: null, ResourceType: Collection, OperationType: Read, SDK: Microsoft.Azure.Documents.Common/2.11.0, {\"RequestStartTimeUtc\":\"2020-05-21T10:54:10.4833128Z\",\"RequestEndTimeUtc\":\"2020-05-21T10:54:10.4973423Z\",\"RequestLatency\":\"00:00:00.0140295\",\"IsCpuOverloaded\":false,\"NumberRegionsAttempted\":1,\"ResponseStatisticsList\":[],\"AddressResolutionStatistics\":[{\"StartTime\":\"2020-05-21T10:54:10.4833951Z\",\"EndTime\":\"2020-05-21T10:54:10.4973423Z\",\"TargetEndpoint\":\"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes\"}],\"SupplementalResponseStatistics\":[],\"FailedReplicas\":[],\"RegionsContacted\":[],\"ContactedReplicas\":[]}, Windows/10.0.14393 cosmos-netstandard-sdk/3.3.2   at Microsoft.Azure.Cosmos.GatewayStoreClient.ParseResponseAsync(HttpResponseMessage responseMessage, JsonSerializerSettings serializerSettings, DocumentServiceRequest request)   at Microsoft.Azure.Cosmos.GatewayStoreClient.InvokeAsync(DocumentServiceRequest request, ResourceType resourceType, Uri physicalAddress, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.GatewayStoreModel.ProcessMessageAsync(DocumentServiceRequest request, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.Routing.ClientCollectionCache.ReadCollectionAsync(String collectionLink, CancellationToken cancellationToken, IDocumentClientRetryPolicy retryPolicyInstance)   at Microsoft.Azure.Documents.BackoffRetryUtility`1.ExecuteRetryAsync(Func`1 callbackMethod, Func`3 callShouldRetry, Func`1 inBackoffAlternateCallbackMethod, TimeSpan minBackoffForInBackoffCallback, CancellationToken cancellationToken, Action`1 preRetryCallback)   at Microsoft.Azure.Documents.ShouldRetryResult.ThrowIfDoneTrying(ExceptionDispatchInfo capturedException)   at Microsoft.Azure.Documents.BackoffRetryUtility`1.ExecuteRetryAsync(Func`1 callbackMethod, Func`3 callShouldRetry, Func`1 inBackoffAlternateCallbackMethod, TimeSpan minBackoffForInBackoffCallback, CancellationToken cancellationToken, Action`1 preRetryCallback)   at Microsoft.Azure.Cosmos.Common.CollectionCache.<>c__DisplayClass10_0.<<ResolveByNameAsync>b__0>d.MoveNext()--- End of stack trace from previous location where exception was thrown ---   at Microsoft.Azure.Cosmos.Common.AsyncCache`2.GetAsync(TKey key, TValue obsoleteValue, Func`1 singleValueInitFunc, CancellationToken cancellationToken, Boolean forceRefresh)   at Microsoft.Azure.Cosmos.Common.CollectionCache.ResolveByNameAsync(String apiVersion, String resourceAddress, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.ClientContextCore.GetCachedContainerPropertiesAsync(String containerUri, CancellationToken cancellationToken)","RequestSessionToken":null,"ResponseSessionToken":null,"ClientRequestStats":{"RequestStartTimeUtc":"2020-05-21T10:54:10.4833128Z","RequestEndTimeUtc":"2020-05-21T10:54:10.4973423Z","RequestLatency":"00:00:00.0140295","IsCpuOverloaded":false,"NumberRegionsAttempted":1,"ResponseStatisticsList":[],"AddressResolutionStatistics":[{"StartTime":"2020-05-21T10:54:10.4833951Z","EndTime":"2020-05-21T10:54:10.4973423Z","TargetEndpoint":"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes"}],"SupplementalResponseStatistics":[],"FailedReplicas":[],"RegionsContacted":[],"ContactedReplicas":[]}}]}
+   at Microsoft.Azure.Cosmos.ClientContextCore.GetCachedContainerPropertiesAsync(String containerUri, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.CosmosQueryClientCore.GetCachedContainerQueryPropertiesAsync(Uri containerLink, Nullable`1 partitionKey, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CosmosQueryExecutionContextFactory.TryCreateCoreContextAsync(CosmosQueryContext cosmosQueryContext, InputParameters inputParameters, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.AsyncLazy`1.GetValueAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.LazyCosmosQueryExecutionContext.ExecuteNextAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CosmosQueryExecutionContextWithNameCacheStaleRetry.ExecuteNextAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CatchAllCosmosQueryExecutionContext.ExecuteNextAsync(CancellationToken cancellationToken)
+Sleep for 5 seconds and try again.
+There was an error with reading from database (try 2/3): Error=16500, Details='Microsoft.Azure.Cosmos.CosmosException : Message: {"Errors":["Request rate is large. More Request Units may be needed, so no changes were made. Please retry this request later. Learn more: http://aka.ms/cosmosdb-error-429"]}
+ActivityId: 5b6fb3ba-c4d1-4738-ac99-ac094d12adf4, Request URI: /apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794018s/, RequestStats: 
+RequestStartTime: 2020-05-21T10:54:15.5436993Z, RequestEndTime: 2020-05-21T10:54:15.5436993Z,  Number of regions attempted:1
+ResponseTime: 2020-05-21T10:54:15.5436993Z, StoreResult: StorePhysicalAddress: rntbd://cdb-ms-prod-westeurope1-fd15.documents.azure.com:14376/apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794018s/, LSN: 53153, GlobalCommittedLsn: 53152, PartitionKeyRangeId: , IsValid: True, StatusCode: 429, SubStatusCode: 3200, RequestCharge: 0.38, ItemLSN: -1, SessionToken: , UsingLocalLSN: True, TransportException: null, ResourceType: Collection, OperationType: Read
+, SDK: Microsoft.Azure.Documents.Common/2.11.0, {"RequestStartTimeUtc":"2020-05-21T10:54:15.5430169Z","RequestEndTimeUtc":"2020-05-21T10:54:15.5502222Z","RequestLatency":"00:00:00.0072053","IsCpuOverloaded":false,"NumberRegionsAttempted":1,"ResponseStatisticsList":[],"AddressResolutionStatistics":[{"StartTime":"2020-05-21T10:54:15.5431134Z","EndTime":"2020-05-21T10:54:15.5502222Z","TargetEndpoint":"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes"}],"SupplementalResponseStatistics":[],"FailedReplicas":[],"RegionsContacted":[],"ContactedReplicas":[]}, Windows/10.0.14393 cosmos-netstandard-sdk/3.3.2
+StatusCode = TooManyRequests;
+SubStatusCode = 3200;
+ActivityId = 5b6fb3ba-c4d1-4738-ac99-ac094d12adf4;
+RequestCharge = 0.38;
+{"Summary":{"StartUtc":"2020-05-21T10:54:15.5509453Z","ElapsedTime":"Timer Never Stopped.","UserAgent":"cosmos-netstandard-sdk/3.6.0|3.3.2|52378|X64|Microsoft Windows 10.0.14393 |.NET Core 4.6.28207.03|","TotalRequestCount":1,"FailedRequestCount":1},"Context":[{"Id":"PointOperationStatistics","ActivityId":"5b6fb3ba-c4d1-4738-ac99-ac094d12adf4","StatusCode":429,"SubStatusCode":0,"RequestCharge":0.38,"RequestUri":null,"ErrorMessage":"Microsoft.Azure.Documents.DocumentClientException: Message: {\"Errors\":[\"Request rate is large. More Request Units may be needed, so no changes were made. Please retry this request later. Learn more: http://aka.ms/cosmosdb-error-429\"]}ActivityId: 5b6fb3ba-c4d1-4738-ac99-ac094d12adf4, Request URI: /apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794018s/, RequestStats: RequestStartTime: 2020-05-21T10:54:15.5436993Z, RequestEndTime: 2020-05-21T10:54:15.5436993Z,  Number of regions attempted:1ResponseTime: 2020-05-21T10:54:15.5436993Z, StoreResult: StorePhysicalAddress: rntbd://cdb-ms-prod-westeurope1-fd15.documents.azure.com:14376/apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794018s/, LSN: 53153, GlobalCommittedLsn: 53152, PartitionKeyRangeId: , IsValid: True, StatusCode: 429, SubStatusCode: 3200, RequestCharge: 0.38, ItemLSN: -1, SessionToken: , UsingLocalLSN: True, TransportException: null, ResourceType: Collection, OperationType: Read, SDK: Microsoft.Azure.Documents.Common/2.11.0, {\"RequestStartTimeUtc\":\"2020-05-21T10:54:15.5430169Z\",\"RequestEndTimeUtc\":\"2020-05-21T10:54:15.5502222Z\",\"RequestLatency\":\"00:00:00.0072053\",\"IsCpuOverloaded\":false,\"NumberRegionsAttempted\":1,\"ResponseStatisticsList\":[],\"AddressResolutionStatistics\":[{\"StartTime\":\"2020-05-21T10:54:15.5431134Z\",\"EndTime\":\"2020-05-21T10:54:15.5502222Z\",\"TargetEndpoint\":\"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes\"}],\"SupplementalResponseStatistics\":[],\"FailedReplicas\":[],\"RegionsContacted\":[],\"ContactedReplicas\":[]}, Windows/10.0.14393 cosmos-netstandard-sdk/3.3.2   at Microsoft.Azure.Cosmos.GatewayStoreClient.ParseResponseAsync(HttpResponseMessage responseMessage, JsonSerializerSettings serializerSettings, DocumentServiceRequest request)   at Microsoft.Azure.Cosmos.GatewayStoreClient.InvokeAsync(DocumentServiceRequest request, ResourceType resourceType, Uri physicalAddress, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.GatewayStoreModel.ProcessMessageAsync(DocumentServiceRequest request, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.Routing.ClientCollectionCache.ReadCollectionAsync(String collectionLink, CancellationToken cancellationToken, IDocumentClientRetryPolicy retryPolicyInstance)   at Microsoft.Azure.Documents.BackoffRetryUtility`1.ExecuteRetryAsync(Func`1 callbackMethod, Func`3 callShouldRetry, Func`1 inBackoffAlternateCallbackMethod, TimeSpan minBackoffForInBackoffCallback, CancellationToken cancellationToken, Action`1 preRetryCallback)   at Microsoft.Azure.Documents.ShouldRetryResult.ThrowIfDoneTrying(ExceptionDispatchInfo capturedException)   at Microsoft.Azure.Documents.BackoffRetryUtility`1.ExecuteRetryAsync(Func`1 callbackMethod, Func`3 callShouldRetry, Func`1 inBackoffAlternateCallbackMethod, TimeSpan minBackoffForInBackoffCallback, CancellationToken cancellationToken, Action`1 preRetryCallback)   at Microsoft.Azure.Cosmos.Common.CollectionCache.<>c__DisplayClass10_0.<<ResolveByNameAsync>b__0>d.MoveNext()--- End of stack trace from previous location where exception was thrown ---   at Microsoft.Azure.Cosmos.Common.AsyncCache`2.GetAsync(TKey key, TValue obsoleteValue, Func`1 singleValueInitFunc, CancellationToken cancellationToken, Boolean forceRefresh)   at Microsoft.Azure.Cosmos.Common.CollectionCache.ResolveByNameAsync(String apiVersion, String resourceAddress, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.ClientContextCore.GetCachedContainerPropertiesAsync(String containerUri, CancellationToken cancellationToken)","RequestSessionToken":null,"ResponseSessionToken":null,"ClientRequestStats":{"RequestStartTimeUtc":"2020-05-21T10:54:15.5430169Z","RequestEndTimeUtc":"2020-05-21T10:54:15.5502222Z","RequestLatency":"00:00:00.0072053","IsCpuOverloaded":false,"NumberRegionsAttempted":1,"ResponseStatisticsList":[],"AddressResolutionStatistics":[{"StartTime":"2020-05-21T10:54:15.5431134Z","EndTime":"2020-05-21T10:54:15.5502222Z","TargetEndpoint":"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes"}],"SupplementalResponseStatistics":[],"FailedReplicas":[],"RegionsContacted":[],"ContactedReplicas":[]}}]}
+   at Microsoft.Azure.Cosmos.ClientContextCore.GetCachedContainerPropertiesAsync(String containerUri, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.CosmosQueryClientCore.GetCachedContainerQueryPropertiesAsync(Uri containerLink, Nullable`1 partitionKey, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CosmosQueryExecutionContextFactory.TryCreateCoreContextAsync(CosmosQueryContext cosmosQueryContext, InputParameters inputParameters, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.AsyncLazy`1.GetValueAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.LazyCosmosQueryExecutionContext.ExecuteNextAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CosmosQueryExecutionContextWithNameCacheStaleRetry.ExecuteNextAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CatchAllCosmosQueryExecutionContext.ExecuteNextAsync(CancellationToken cancellationToken)
+Sleep for 5 seconds and try again.
+Most recent tweet in mercedes collection has id 1263422658206748672.
+Successfully fetched 40 tweets.
+Successfully saved 21 documents to database mercedes.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 2000 tweets. ------
+There was an error with reading from database (try 1/3): Error=16500, Details='Microsoft.Azure.Cosmos.CosmosException : Message: {"Errors":["Request rate is large. More Request Units may be needed, so no changes were made. Please retry this request later. Learn more: http://aka.ms/cosmosdb-error-429"]}
+ActivityId: 2b98a501-2acb-49d6-a59e-8882154b62ba, Request URI: /apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, RequestStats: 
+RequestStartTime: 2020-05-21T10:54:23.9739330Z, RequestEndTime: 2020-05-21T10:54:23.9739330Z,  Number of regions attempted:1
+ResponseTime: 2020-05-21T10:54:23.9739330Z, StoreResult: StorePhysicalAddress: rntbd://cdb-ms-prod-westeurope1-fd15.documents.azure.com:14069/apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, LSN: 53297, GlobalCommittedLsn: 53296, PartitionKeyRangeId: , IsValid: True, StatusCode: 429, SubStatusCode: 3200, RequestCharge: 0.38, ItemLSN: -1, SessionToken: , UsingLocalLSN: True, TransportException: null, ResourceType: Collection, OperationType: Read
+, SDK: Microsoft.Azure.Documents.Common/2.11.0, {"RequestStartTimeUtc":"2020-05-21T10:54:23.9678481Z","RequestEndTimeUtc":"2020-05-21T10:54:23.9853953Z","RequestLatency":"00:00:00.0175472","IsCpuOverloaded":false,"NumberRegionsAttempted":1,"ResponseStatisticsList":[],"AddressResolutionStatistics":[{"StartTime":"2020-05-21T10:54:23.967911Z","EndTime":"2020-05-21T10:54:23.9853953Z","TargetEndpoint":"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes_eqc"}],"SupplementalResponseStatistics":[],"FailedReplicas":[],"RegionsContacted":[],"ContactedReplicas":[]}, Windows/10.0.14393 cosmos-netstandard-sdk/3.3.2
+StatusCode = TooManyRequests;
+SubStatusCode = 3200;
+ActivityId = 2b98a501-2acb-49d6-a59e-8882154b62ba;
+RequestCharge = 0.38;
+{"Summary":{"StartUtc":"2020-05-21T10:54:23.9859879Z","ElapsedTime":"Timer Never Stopped.","UserAgent":"cosmos-netstandard-sdk/3.6.0|3.3.2|52378|X64|Microsoft Windows 10.0.14393 |.NET Core 4.6.28207.03|","TotalRequestCount":1,"FailedRequestCount":1},"Context":[{"Id":"PointOperationStatistics","ActivityId":"2b98a501-2acb-49d6-a59e-8882154b62ba","StatusCode":429,"SubStatusCode":0,"RequestCharge":0.38,"RequestUri":null,"ErrorMessage":"Microsoft.Azure.Documents.DocumentClientException: Message: {\"Errors\":[\"Request rate is large. More Request Units may be needed, so no changes were made. Please retry this request later. Learn more: http://aka.ms/cosmosdb-error-429\"]}ActivityId: 2b98a501-2acb-49d6-a59e-8882154b62ba, Request URI: /apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, RequestStats: RequestStartTime: 2020-05-21T10:54:23.9739330Z, RequestEndTime: 2020-05-21T10:54:23.9739330Z,  Number of regions attempted:1ResponseTime: 2020-05-21T10:54:23.9739330Z, StoreResult: StorePhysicalAddress: rntbd://cdb-ms-prod-westeurope1-fd15.documents.azure.com:14069/apps/c8568c7b-6923-431d-8862-9f1b9c78f80a/services/aa418422-635e-48c9-99a0-927a42d73148/partitions/fa6adeb5-4d1c-4e1d-8586-de364aad1023/replicas/132335094182794020s/, LSN: 53297, GlobalCommittedLsn: 53296, PartitionKeyRangeId: , IsValid: True, StatusCode: 429, SubStatusCode: 3200, RequestCharge: 0.38, ItemLSN: -1, SessionToken: , UsingLocalLSN: True, TransportException: null, ResourceType: Collection, OperationType: Read, SDK: Microsoft.Azure.Documents.Common/2.11.0, {\"RequestStartTimeUtc\":\"2020-05-21T10:54:23.9678481Z\",\"RequestEndTimeUtc\":\"2020-05-21T10:54:23.9853953Z\",\"RequestLatency\":\"00:00:00.0175472\",\"IsCpuOverloaded\":false,\"NumberRegionsAttempted\":1,\"ResponseStatisticsList\":[],\"AddressResolutionStatistics\":[{\"StartTime\":\"2020-05-21T10:54:23.967911Z\",\"EndTime\":\"2020-05-21T10:54:23.9853953Z\",\"TargetEndpoint\":\"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes_eqc\"}],\"SupplementalResponseStatistics\":[],\"FailedReplicas\":[],\"RegionsContacted\":[],\"ContactedReplicas\":[]}, Windows/10.0.14393 cosmos-netstandard-sdk/3.3.2   at Microsoft.Azure.Cosmos.GatewayStoreClient.ParseResponseAsync(HttpResponseMessage responseMessage, JsonSerializerSettings serializerSettings, DocumentServiceRequest request)   at Microsoft.Azure.Cosmos.GatewayStoreClient.InvokeAsync(DocumentServiceRequest request, ResourceType resourceType, Uri physicalAddress, Cancella.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+There was an error with writing tweets to database (try 1/3): batch op errors occurred
+Sleep for 5 seconds and try again.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 3 documents to database mercedes.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 2000 tweets. ------
+There was an error with reading from database (try 1/3): Error=16500, Details='
+Sleep for 5 seconds and try again.
+Most recent tweet in mercedes_eqc collection has id 1263410016381534210.
+Successfully fetched 25 tweets.
+-> There are no new tweets. Collection is already up to date.
+Script took 143.469481945 seconds to execute.
+tionToken cancellationToken)   at Microsoft.Azure.Cosmos.GatewayStoreModel.ProcessMessageAsync(DocumentServiceRequest request, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.Routing.ClientCollectionCache.ReadCollectionAsync(String collectionLink, CancellationToken cancellationToken, IDocumentClientRetryPolicy retryPolicyInstance)   at Microsoft.Azure.Documents.BackoffRetryUtility`1.ExecuteRetryAsync(Func`1 callbackMethod, Func`3 callShouldRetry, Func`1 inBackoffAlternateCallbackMethod, TimeSpan minBackoffForInBackoffCallback, CancellationToken cancellationToken, Action`1 preRetryCallback)   at Microsoft.Azure.Documents.ShouldRetryResult.ThrowIfDoneTrying(ExceptionDispatchInfo capturedException)   at Microsoft.Azure.Documents.BackoffRetryUtility`1.ExecuteRetryAsync(Func`1 callbackMethod, Func`3 callShouldRetry, Func`1 inBackoffAlternateCallbackMethod, TimeSpan minBackoffForInBackoffCallback, CancellationToken cancellationToken, Action`1 preRetryCallback)   at Microsoft.Azure.Cosmos.Common.CollectionCache.<>c__DisplayClass10_0.<<ResolveByNameAsync>b__0>d.MoveNext()--- End of stack trace from previous location where exception was thrown ---   at Microsoft.Azure.Cosmos.Common.AsyncCache`2.GetAsync(TKey key, TValue obsoleteValue, Func`1 singleValueInitFunc, CancellationToken cancellationToken, Boolean forceRefresh)   at Microsoft.Azure.Cosmos.Common.CollectionCache.ResolveByNameAsync(String apiVersion, String resourceAddress, CancellationToken cancellationToken)   at Microsoft.Azure.Cosmos.ClientContextCore.GetCachedContainerPropertiesAsync(String containerUri, CancellationToken cancellationToken)","RequestSessionToken":null,"ResponseSessionToken":null,"ClientRequestStats":{"RequestStartTimeUtc":"2020-05-21T10:54:23.9678481Z","RequestEndTimeUtc":"2020-05-21T10:54:23.9853953Z","RequestLatency":"00:00:00.0175472","IsCpuOverloaded":false,"NumberRegionsAttempted":1,"ResponseStatisticsList":[],"AddressResolutionStatistics":[{"StartTime":"2020-05-21T10:54:23.967911Z","EndTime":"2020-05-21T10:54:23.9853953Z","TargetEndpoint":"https://coins-admin-westeurope.documents.azure.com/dbs/coins-brand-equity-dilution-database/colls/mercedes_eqc"}],"SupplementalResponseStatistics":[],"FailedReplicas":[],"RegionsContacted":[],"ContactedReplicas":[]}}]}
+   at Microsoft.Azure.Cosmos.ClientContextCore.GetCachedContainerPropertiesAsync(String containerUri, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.CosmosQueryClientCore.GetCachedContainerQueryPropertiesAsync(Uri containerLink, Nullable`1 partitionKey, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CosmosQueryExecutionContextFactory.TryCreateCoreContextAsync(CosmosQueryContext cosmosQueryContext, InputParameters inputParameters, CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.AsyncLazy`1.GetValueAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.LazyCosmosQueryExecutionContext.ExecuteNextAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CosmosQueryExecutionContextWithNameCacheStaleRetry.ExecuteNextAsync(CancellationToken cancellationToken)
+   at Microsoft.Azure.Cosmos.Query.Core.ExecutionContext.CatchAllCosmosQueryExecutionContext.ExecuteNextAsync(CancellationToken cancellationToken)
+Sleep for 5 seconds and try again.
+Most recent tweet in mercedes_eqc collection has id 1263410016381534210.
+Successfully fetched 25 tweets.
+-> There are no new tweets. Collection is already up to date.
+Script took 86.237995863 seconds to execute.
+Initalized database client.
+No tweets stored in collection audi_etron
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263420559607635969.
+Successfully fetched 40 tweets.
+Successfully saved 1 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263422557853609985.
+Successfully fetched 50 tweets.
+Successfully saved 13 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+Most recent tweet in google_stadia collection has id 1263419051013017602.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+Most recent tweet in google collection has id 1263422626430464000.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 32 documents to database google.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 2000 tweets. ------
+Most recent tweet in volkswagen collection has id 1263422794748092421.
+Successfully fetched 40 tweets.
+Successfully saved 14 documents to database volkswagen.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 2000 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1263211743632900096.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 2000 tweets. ------
+Most recent tweet in mercedes collection has id 1263422867582181382.
+Successfully fetched 40 tweets.
+Successfully saved 14 documents to database mercedes.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 2000 tweets. ------
+Most recent tweet in mercedes_eqc collection has id 1263410016381534210.
+Successfully fetched 25 tweets.
+-> There are no new tweets. Collection is already up to date.
+Script took 57.5087690353 seconds to execute.
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1263422645753622528.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 2000 tweets. ------
+Most recent tweet in audi_etron collection has id 1263422645753622528.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'audi' for query 'audi' with at most 2500 tweets. ------
+Most recent tweet in audi collection has id 1263422819414749185.
+Successfully fetched 50 tweets.
+Successfully saved 9 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 2000 tweets. ------
+Most recent tweet in google_stadia collection has id 1263419051013017602.
+Successfully fetched 40 tweets.
+Successfully saved 1 documents to database google_stadia.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google' for query 'google' with at most 2000 tweets. ------
+Most recent tweet in google collection has id 1263422857243250689.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 40 tweets.
+Successfully saved 40 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 39 tweets.
+Successfully saved 1 documents to database google.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 2000 tweets. ------
+Most recent tweet in volkswagen collection has id 1263423010775527424.
+Successfully fetched 40 tweets.
+Successfully saved 14 documents to database volkswagen.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 2000 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1263211743632900096.
+Successfully fetched 40 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 2000 tweets. ------
+Most recent tweet in mercedes collection has id 1263423020086984704.
+Successfully fetched 40 tweets.
+Successfully saved 23 documents to database mercedes.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 2000 tweets. ------
+Most recent tweet in mercedes_eqc collection has id 1263410016381534210.
+Successfully fetched 25 tweets.
+-> There are no new tweets. Collection is already up to date.
+Script took 68.8415279388 seconds to execute.
