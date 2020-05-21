@@ -8,6 +8,8 @@ import pymongo
 import config
 import statistics
 
+import matplotlib.pyplot as plt
+
 from database_client import DatabaseClient
 
 from nltk import FreqDist
@@ -103,7 +105,7 @@ def main():
             except:
                 tweets = False
 
-        neg, neu, pos, count = list(), list(), list()
+        neg, neu, pos = list(), list(), list()
 
         for tweet in tweets:
             if tweet['lang'] == 'en':
@@ -117,7 +119,18 @@ def main():
         neu_med = statistics.median(neu)
         pos_med = statistics.median(pos)
 
-        print("%s:\n\tAverages: neg= %s, neu= %s, pos= %s, count= %s\n\tMedian: neg= %s, neu= %s, pos=%s\n" %(kw, str(neg), str(neu), str(pos), str(count), str(neg_med), str(neu_med), str(pos_med)))
+        print("%s:\n\tAverages: neg= %s, neu= %s, pos= %s, count= %s\n\tMedian: neg= %s, neu= %s, pos=%s\n" %(kw, str(neg_avg), str(neu_avg), str(pos_avg), str(len(neg)), str(neg_med), str(neu_med), str(pos_med)))
+
+
+        # Pie chart, where the slices will be ordered and plotted counter-clockwise:
+        labels = 'neg', 'neu', 'pos'
+        sizes = [neg_avg, neu_avg, pos_avg]
+
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+        plt.show()
 
 if __name__ == '__main__':
     main()
