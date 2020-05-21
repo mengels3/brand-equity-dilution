@@ -104,7 +104,7 @@ def populateTweetsInDatabase(collection, query, fetch_iterations, fetch_batch_si
           query + "' with at most " + str(fetch_iterations*fetch_batch_size) + " tweets. ------")
 
     latest_saved_index = dbClient.getLatestTweetId(
-        collection, 3, 5)
+        collection, 3, 10)
     max_id = None
 
     # if there has been a lot of tweets or we are doing an inital fetch we will at most do 50 requests a 20 tweets => saving 1000 tweets at max
@@ -168,6 +168,7 @@ def main():
     dbClient.getLatestTweetId('audi_etron', 1, 1)
     # maybe wait for connection?
     time.sleep(1)
+
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
     populateTweetsInDatabase(
         'audi_etron', 'audi etron OR audi e-tron', 50, 40, dbClient)
@@ -183,6 +184,7 @@ def main():
         'mercedes', 'mercedes OR mercedes-benz', 50, 40, dbClient)
     populateTweetsInDatabase(
         'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 50, 40, dbClient)
+
     end = time.time()
     print('Script took ' + str(end - start) + ' seconds to execute.')
 
