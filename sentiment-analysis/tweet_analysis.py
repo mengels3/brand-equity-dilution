@@ -152,7 +152,6 @@ def main():
 
         x_axis_vals = dict()
         y_axis_vals = dict()
-        vals = dict()
         for kw in results:
             x_axis_vals[kw] = list()
             y_axis_vals[kw] = list()
