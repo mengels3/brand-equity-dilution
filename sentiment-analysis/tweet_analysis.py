@@ -7,6 +7,7 @@ import random
 import pymongo
 import config
 import statistics
+import datetime
 
 import matplotlib.pyplot as plt
 
@@ -94,42 +95,80 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
 
 def main():
     nltk_downloader()
+    brands = ['audi', 'volkswagen', 'mercedes']
     keywords = ['audi', 'audi_etron', 'volkswagen', 'volkswagen_id3', 'mercedes', 'mercedes_eqc']
-    for kw in keywords:
-        print("Sentiment Intensity Analysis with noise removal for \"%s\": poitive, negative, neutral percentages" %kw)
-        tweets = False
-        
-        while not tweets:
-            try:
-                tweets = get_tweets(kw)
-            except:
+
+    for b in brands:
+        results = dict()
+        for kw in keywords:
+            if b in kw:
+                print("Sentiment Intensity Analysis with noise removal for \"%s\": poitive, negative, neutral percentages" %kw)
                 tweets = False
 
-        neg, neu, pos = list(), list(), list()
+                results[kw] = dict()
+                
+                while not tweets:
+                    try:
+                        tweets = get_tweets(kw)
+                    except:
+                        tweets = False
 
-        for tweet in tweets:
-            if tweet['lang'] == 'en':
-                neg, neu, pos = get_sentiment_of_tweet(tweet['full_text'], neg, neu, pos)
+                neg, neu, pos = list(), list(), list()
 
-        neg_avg = sum(neg) / len(neg)
-        neu_avg = sum(neu) / len(neu)
-        pos_avg = sum(pos) / len(pos)
+                for tweet in tweets:
+                    if tweet['lang'] == 'en':
+                        date = datetime.datetime.strptime(tweet['created_at'], '%a %b %d %H:%M:%S %z %Y').date()
+                        try:
+                            x = results[kw][date]
+                        except KeyError:
+                            results[kw][date] = dict()
+                            results[kw][date]['neg'] = list()
+                            results[kw][date]['neu'] = list()
+                            results[kw][date]['pos'] = list()
+                        results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'])
 
-        neg_med = statistics.median(neg)
-        neu_med = statistics.median(neu)
-        pos_med = statistics.median(pos)
+                # neg_avg = sum(neg) / len(neg)
+                # neu_avg = sum(neu) / len(neu)
+                # pos_avg = sum(pos) / len(pos)
 
-        print("%s:\n\tAverages: neg= %s, neu= %s, pos= %s, count= %s\n\tMedian: neg= %s, neu= %s, pos=%s\n" %(kw, str(neg_avg), str(neu_avg), str(pos_avg), str(len(neg)), str(neg_med), str(neu_med), str(pos_med)))
+                # neg_med = statistics.median(neg)
+                # neu_med = statistics.median(neu)
+                # pos_med = statistics.median(pos)
+
+                # print("%s:\n\tAverages: neg= %s, neu= %s, pos= %s, count= %s\n\tMedian: neg= %s, neu= %s, pos=%s\n" %(kw, str(neg_avg), str(neu_avg), str(pos_avg), str(len(neg)), str(neg_med), str(neu_med), str(pos_med)))
 
 
-        # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-        labels = 'neg', 'neu', 'pos'
-        sizes = [neg_avg, neu_avg, pos_avg]
+                # Pie chart, where the slices will be ordered and plotted counter-clockwise:
+                # labels = 'neg', 'neu', 'pos'
+                # sizes = [neg_avg, neu_avg, pos_avg]
 
-        fig1, ax1 = plt.subplots()
-        ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
-        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+                # fig1, ax1 = plt.subplots()
+                # ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+                # ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
+                # plt.show()
+
+            # negativity of tweets:
+
+        x_axis_vals = dict()
+        y_axis_vals = dict()
+        vals = dict()
+        for kw in results:
+            x_axis_vals[kw] = list()
+            y_axis_vals[kw] = list()
+
+            for date in sorted(results[kw]):
+                neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
+                y_axis_vals[kw].append(neg_avg)
+                x_axis_vals[kw].append(str(date))
+
+        print(x_axis_vals[list(x_axis_vals.keys())[0]])
+        print(y_axis_vals[list(y_axis_vals.keys())[0]])
+        print(x_axis_vals[list(x_axis_vals.keys())[1]])
+        print(y_axis_vals[list(y_axis_vals.keys())[1]])
+
+
+        plt.plot(x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'r--', x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'b--')
         plt.show()
 
 if __name__ == '__main__':
