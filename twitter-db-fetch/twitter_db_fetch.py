@@ -167,7 +167,7 @@ def saveTweets(collection, tweets, retries, timeoutSec, dbClient):
 
 def main():
     start = time.time()
-    print("Starttime: %s" %str(datetime.datetime.now()))
+    print("Starttime: %s" % str(datetime.datetime.now()))
     dbClient = DatabaseClient()
     # for some reason we have to do this once (maybe to establish connection but dunno)
     dbClient.getLatestTweetId('audi_etron', 1, 1)
@@ -177,7 +177,7 @@ def main():
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
     populateTweetsInDatabase(
         'audi_etron', 'audi etron OR audi e-tron', 30, 30, dbClient)
-    populateTweetsInDatabase('audi', 'audi', 50, 50, dbClient)
+    populateTweetsInDatabase('audi', 'audi', 30, 30, dbClient)
     populateTweetsInDatabase(
         'google_stadia', 'google stadia OR stadia', 30, 30, dbClient)
     populateTweetsInDatabase('google', 'google', 30, 30, dbClient)
@@ -191,7 +191,7 @@ def main():
         'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 30, 30, dbClient)
 
     print('Script took ' + str(time.time() - start) + ' seconds to execute.')
-    print("Endtime: %s" %str(datetime.datetime.now()))
+    print("Endtime: %s" % str(datetime.datetime.now()))
 
 
 if __name__ == "__main__":
