@@ -174,19 +174,19 @@ def main():
 
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
     populateTweetsInDatabase(
-        'audi_etron', 'audi etron OR audi e-tron', 50, 40, dbClient)
+        'audi_etron', 'audi etron OR audi e-tron', 30, 30, dbClient)
     populateTweetsInDatabase('audi', 'audi', 50, 50, dbClient)
     populateTweetsInDatabase(
-        'google_stadia', 'google stadia OR stadia', 50, 40, dbClient)
-    populateTweetsInDatabase('google', 'google', 50, 40, dbClient)
+        'google_stadia', 'google stadia OR stadia', 30, 30, dbClient)
+    populateTweetsInDatabase('google', 'google', 30, 30, dbClient)
     populateTweetsInDatabase(
-        'volkswagen', 'vw OR volkswagen', 50, 40, dbClient)
+        'volkswagen', 'vw OR volkswagen', 30, 30, dbClient)
     populateTweetsInDatabase(
-        'volkswagen_id3', 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3', 50, 40, dbClient)
+        'volkswagen_id3', 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3', 30, 30, dbClient)
     populateTweetsInDatabase(
-        'mercedes', 'mercedes OR mercedes-benz', 50, 40, dbClient)
+        'mercedes', 'mercedes OR mercedes-benz', 30, 30, dbClient)
     populateTweetsInDatabase(
-        'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 50, 40, dbClient)
+        'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 30, 30, dbClient)
 
     end = time.time()
     print('Script took ' + str(end - start) + ' seconds to execute.')
