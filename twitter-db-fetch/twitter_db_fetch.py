@@ -5,6 +5,7 @@ import config
 import json
 import re
 import time
+import datetime
 from database_client import DatabaseClient
 
 fetch_sleep_timeout_in_sec = 3
@@ -166,6 +167,7 @@ def saveTweets(collection, tweets, retries, timeoutSec, dbClient):
 
 def main():
     start = time.time()
+    print("Starttime: %s" %str(datetime.datetime.now()))
     dbClient = DatabaseClient()
     # for some reason we have to do this once (maybe to establish connection but dunno)
     dbClient.getLatestTweetId('audi_etron', 1, 1)
@@ -188,8 +190,8 @@ def main():
     populateTweetsInDatabase(
         'mercedes_eqc', 'mercedes eqc OR mercedes-benz eqc OR benz eqc', 30, 30, dbClient)
 
-    end = time.time()
-    print('Script took ' + str(end - start) + ' seconds to execute.')
+    print('Script took ' + str(time.time() - start) + ' seconds to execute.')
+    print("Endtime: %s" %str(datetime.datetime.now()))
 
 
 if __name__ == "__main__":
