@@ -8,6 +8,7 @@ import pymongo
 import config
 import statistics
 import datetime
+import collections
 
 import matplotlib.pyplot as plt
 
@@ -32,6 +33,8 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.stem.wordnet import WordNetLemmatizer
 
 from pymongo import MongoClient
+
+from wordcloud import WordCloud
 
 
 def nltk_downloader():
@@ -74,34 +77,37 @@ def remove_noise(tweet_tokens, stop_words):
         token = lemmatizer.lemmatize(token, pos)
 
         if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
-            cleaned_tokens.append(token.lower())
+            cleaned_tokens.append(str(token.lower().encode('utf-8')))
     return cleaned_tokens
 
 
 def get_sentiment_of_tweet(tweet, neg, neu, pos):
 
     stop_words = stopwords.words('english')
+
     cleaned_tweet = remove_noise(word_tokenize(tweet), stop_words)
     
     sid = SentimentIntensityAnalyzer()
 
-    ss = sid.polarity_scores(" ".join(cleaned_tweet))
+    ss = sid.polarity_scores(str(u" ".join(cleaned_tweet)))
 
     neg.append(ss['neg'])
     neu.append(ss['neu'])
     pos.append(ss['pos'])
 
-    return neg, neu, pos
+    return cleaned_tweet, neg, neu, pos
 
 def main():
-    nltk_downloader()
+    # nltk_downloader()
     brands = ['audi', 'volkswagen', 'mercedes']
     keywords = ['audi', 'audi_etron', 'volkswagen', 'volkswagen_id3', 'mercedes', 'mercedes_eqc']
 
     for b in brands:
         results = dict()
+        wc_results = dict()
         for kw in keywords:
             if b in kw:
+                wc_results[kw] = collections.Counter({})
                 print("Sentiment Intensity Analysis with noise removal for \"%s\": poitive, negative, neutral percentages" %kw)
                 tweets = False
 
@@ -125,8 +131,9 @@ def main():
                             results[kw][date]['neg'] = list()
                             results[kw][date]['neu'] = list()
                             results[kw][date]['pos'] = list()
-                        results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'])
+                        cleaned_tweet, results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'])
 
+                        wc_results[kw] += collections.Counter(cleaned_tweet)
                 # neg_avg = sum(neg) / len(neg)
                 # neu_avg = sum(neu) / len(neu)
                 # pos_avg = sum(pos) / len(pos)
@@ -150,9 +157,18 @@ def main():
 
             # negativity of tweets:
 
+        print(wc_results)
+
+
         x_axis_vals = dict()
         y_axis_vals = dict()
         for kw in results:
+            wordcloud = WordCloud()
+            wordcloud.generate_from_frequencies(frequencies=wc_results[kw])
+            plt.figure()
+            plt.imshow(wordcloud, interpolation="bilinear")
+            plt.axis("off")
+            plt.show()
             x_axis_vals[kw] = list()
             y_axis_vals[kw] = list()
 
