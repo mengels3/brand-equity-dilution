@@ -13381,3 +13381,2332 @@ Successfully fetched 40 tweets.
 -> There are no new tweets. Collection is already up to date.
 Script took 596.35351181 seconds to execute.
 Endtime: 2020-05-24 10:10:00.320408
+Starttime: 2020-05-24 12:00:04.272294
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264452322345844738.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264452322345844738.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 12 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264466336316612608.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 18 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264459578378383360.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 10 documents to database google_stadia.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google' for query 'google' with at most 900 tweets. ------
+Most recent tweet in google collection has id 1264466756942401537.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 900 tweets. ------
+Most recent tweet in volkswagen collection has id 1264467559174279171.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 900 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1264338940103884800.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 900 tweets. ------
+Most recent tweet in mercedes collection has id 1264468092123598849.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 16 tweets.
+Successfully saved 16 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 900 tweets. ------
+Most recent tweet in mercedes_eqc collection has id 1264417576500834305.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+-> There are no new tweets. Collection is already up to date.
+Script took 590.643253088 seconds to execute.
+Endtime: 2020-05-24 12:09:54.915614
+Starttime: 2020-05-24 14:00:03.976823
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264489778793283584.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264489778793283584.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 18 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264496538878910465.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 28 tweets.
+Successfully saved 28 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 28 tweets.
+Successfully saved 28 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 21 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264492781910843398.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 13 documents to database google_stadia.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google' for query 'google' with at most 900 tweets. ------
+Most recent tweet in google collection has id 1264497170402533376.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 900 tweets. ------
+Most recent tweet in volkswagen collection has id 1264497727397859328.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 23 documents to database volkswagen.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 900 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1264338940103884800.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 900 tweets. ------
+Most recent tweet in mercedes collection has id 1264498341003567104.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 900 tweets. ------
+Most recent tweet in mercedes_eqc collection has id 1264417576500834305.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+-> There are no new tweets. Collection is already up to date.
+Script took 597.799046993 seconds to execute.
+Endtime: 2020-05-24 14:10:01.775916
+Starttime: 2020-05-24 16:00:03.840047
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264526574948409345.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264526574948409345.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 5 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264526694150549506.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264524646545788930.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 16 documents to database google_stadia.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google' for query 'google' with at most 900 tweets. ------
+Most recent tweet in google collection has id 1264527383668813825.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 900 tweets. ------
+Most recent tweet in volkswagen collection has id 1264527931860082688.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 900 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1264338940103884800.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 1 documents to database volkswagen_id3.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 900 tweets. ------
+Most recent tweet in mercedes collection has id 1264528567691599872.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 900 tweets. ------
+Most recent tweet in mercedes_eqc collection has id 1264417576500834305.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 4 documents to database mercedes_eqc.
+-> All new tweets have been successfully fetched and stored.
+Script took 608.516368151 seconds to execute.
+Endtime: 2020-05-24 16:10:12.356487
+Starttime: 2020-05-24 18:00:04.463511
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264555814192324608.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264555814192324608.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 14 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264556926475497473.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 28 tweets.
+Successfully saved 28 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 25 tweets.
+Successfully saved 25 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264557335453863937.
+Wait for 10 seconds until storing documents to collection.
+Successfully fKilled
+Starttime: 2020-05-24 20:00:04.732839
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264571694359945217.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264571694359945217.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 5 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264587154426146827.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 25 tweets.
+Successfully saved 25 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 25 tweets.
+Successfully saved 25 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 27 tweets.
+Successfully saved 27 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264587541849784327.
+Wait for 10 seconds until storing documents to collection.
+Successfully feKilled
+Starttime: 2020-05-24 22:00:03.968802
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264613252467744768.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264613252467744768.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 3 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264617349786845185.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264616869597777920.
+Wait for 10 seconds until storing documents to collection.
+Successfully feKilled
+Starttime: 2020-05-25 00:00:04.316913
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264645409294745602.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264645409294745602.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 4 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264647521806278656.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 28 tweets.
+Successfully saved 28 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 23 tweets.
+Successfully saved 23 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 28 tweets.
+Successfully saved 28 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 1 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264644225510985728.
+Wait for 10 seKilled
+Starttime: 2020-05-25 02:00:04.590930
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264662962507321344.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264662962507321344.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 1 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264677736980807681.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264676988763148289.
+Wait for 10 seconds until storing documents to collection.
+Successfully feKilled
+Killed
+Killed
+Starttime: 2020-05-25 08:00:04.069316
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264767259974795269.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264767259974795269.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+-> There are no new tweets. Collection is already up to date.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264768328163135488.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 19 documents to database audi.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264765982792392704.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 13 documents to database google_stadia.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'google' for query 'google' with at most 900 tweets. ------
+Most recent tweet in google collection has id 1264557617252311040.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 29 tweets.
+Successfully saved 29 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 28 tweets.
+Successfully saved 28 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database google.
+
+------ Populating database collection 'volkswagen' for query 'vw OR volkswagen' with at most 900 tweets. ------
+Most recent tweet in volkswagen collection has id 1264558178584444931.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database volkswagen.
+
+------ Populating database collection 'volkswagen_id3' for query 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3' with at most 900 tweets. ------
+Most recent tweet in volkswagen_id3 collection has id 1264550734902657024.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 10 documents to database volkswagen_id3.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'mercedes' for query 'mercedes OR mercedes-benz' with at most 900 tweets. ------
+Most recent tweet in mercedes collection has id 1264558803934216192.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database mercedes.
+
+------ Populating database collection 'mercedes_eqc' for query 'mercedes eqc OR mercedes-benz eqc OR benz eqc' with at most 900 tweets. ------
+Most recent tweet in mercedes_eqc collection has id 1264555814192324608.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 9 documents to database mercedes_eqc.
+-> All new tweets have been successfully fetched and stored.
+Script took 573.811717033 seconds to execute.
+Endtime: 2020-05-25 08:09:37.881103
+Starttime: 2020-05-25 10:00:04.482545
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264767259974795269.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264767259974795269.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 3 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264798530356629505.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264798408675594240.
+Wait for 10 seconds until storing documents to collection.
+Successfully feKilled
+Starttime: 2020-05-25 12:00:04.146517
+Initalized database client.
+Most recent tweet in audi_etron collection has id 1264815574544072710.
+
+------ Populating database collection 'audi_etron' for query 'audi etron OR audi e-tron' with at most 900 tweets. ------
+Most recent tweet in audi_etron collection has id 1264815574544072710.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 4 documents to database audi_etron.
+-> All new tweets have been successfully fetched and stored.
+
+------ Populating database collection 'audi' for query 'audi' with at most 900 tweets. ------
+Most recent tweet in audi collection has id 1264828746810273793.
+Wait for 10 seconds until storing documents to collection.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+Sleep for 3 seconds.
+Successfully fetched 30 tweets.
+Successfully saved 30 documents to database audi.
+
+------ Populating database collection 'google_stadia' for query 'google stadia OR stadia' with at most 900 tweets. ------
+Most recent tweet in google_stadia collection has id 1264828477255155713.
+Wait for 10 seconds until storing documents to collection.
+Successfully feKilled
