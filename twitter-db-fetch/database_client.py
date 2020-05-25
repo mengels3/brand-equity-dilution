@@ -16,7 +16,7 @@ class DatabaseClient:
         for i in range(retries):
             try:
                 collection = self.database[collection_name]
-                tweets = list(collection.find({}))
+                tweets = list(collection.find({}, projection={'id_str': 1}))
                 break
             except Exception as e:
                 if i == retries-1:
@@ -38,6 +38,23 @@ class DatabaseClient:
 
     def getAllDocuments(self, collection_name):
         return list(self.database[collection_name].find())
+
+    def getAllDocumentsInChunks(self, collection_name, chunk_size, timeoutSec):
+
+        results = []
+        i = 0
+        while True:
+            cursor = self.database[collection_name].find(
+                {}).skip(len(results)).limit(chunk_size)
+            newDocs = list(cursor)
+            cursor.close()
+            if len(newDocs) == 0:
+                break
+            results.extend(newDocs)
+            print(len(results))
+            i += 1
+            time.sleep(timeoutSec)
+        return results
 
     def saveDocuments(self, collection_name, documents):
         collection = self.database[collection_name]
