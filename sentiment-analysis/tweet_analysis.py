@@ -9,6 +9,8 @@ import config
 import statistics
 import datetime
 import collections
+import json
+import argparse
 
 import matplotlib.pyplot as plt
 
@@ -36,6 +38,8 @@ from pymongo import MongoClient
 
 from wordcloud import WordCloud
 
+from bson import json_util
+
 
 def nltk_downloader():
     nltk.download('twitter_samples')
@@ -46,15 +50,28 @@ def nltk_downloader():
     nltk.download('vader_lexicon')
 
 def get_tweets(keyword):
-    dbClient = DatabaseClient()
+    if args.online:
+        dbClient = DatabaseClient()
 
-    tweets = dbClient.getAllDocuments(keyword)
-    print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
+        tweets = list(dbClient.getAllDocuments(keyword))
+        print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
 
-    max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
-    print("Id of latest fetched tweet is %s." %str(max_id))
+        max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
+        print("Id of latest fetched tweet is %s." %str(max_id))
 
-    return tweets
+        print(type(tweets[0]))
+        with open(keyword + '_data.json', 'w+') as f:
+            f.write(json.dumps(tweets,default=json_util.default, indent=4))
+        return tweets
+    else:
+        try:
+            with open(keyword + '_data.json', 'r') as f:
+                tweets = json.load(f)
+
+            return tweets
+        except:
+            print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
+            return "No Data"
 
 
 def remove_noise(tweet_tokens, stop_words):
@@ -77,7 +94,7 @@ def remove_noise(tweet_tokens, stop_words):
         token = lemmatizer.lemmatize(token, pos)
 
         if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
-            cleaned_tokens.append(str(token.lower().encode('utf-8')))
+            cleaned_tokens.append(str(token.lower()))
     return cleaned_tokens
 
 
@@ -89,7 +106,7 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
     
     sid = SentimentIntensityAnalyzer()
 
-    ss = sid.polarity_scores(str(u" ".join(cleaned_tweet)))
+    ss = sid.polarity_scores(u" ".join(cleaned_tweet))
 
     neg.append(ss['neg'])
     neu.append(ss['neu'])
@@ -99,8 +116,8 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
 
 def main():
     # nltk_downloader()
-    brands = ['audi', 'volkswagen', 'mercedes']
-    keywords = ['audi', 'audi_etron', 'volkswagen', 'volkswagen_id3', 'mercedes', 'mercedes_eqc']
+    brands = ['audi']#, 'volkswagen', 'mercedes']
+    keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
 
     for b in brands:
         results = dict()
@@ -113,14 +130,17 @@ def main():
 
                 results[kw] = dict()
                 
-                while not tweets:
-                    try:
-                        tweets = get_tweets(kw)
-                    except:
-                        tweets = False
+                # while not tweets:
+                #     try:
+                tweets = get_tweets(kw)
+                    # except:
+                    #     tweets = False
 
+                if tweets == "No Data":
+                    sys.exit()
                 neg, neu, pos = list(), list(), list()
 
+                print('Starting Analysis for %s' %kw)
                 for tweet in tweets:
                     if tweet['lang'] == 'en':
                         date = datetime.datetime.strptime(tweet['created_at'], '%a %b %d %H:%M:%S %z %Y').date()
@@ -133,6 +153,22 @@ def main():
                             results[kw][date]['pos'] = list()
                         cleaned_tweet, results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'])
 
+                        # print(cleaned_tweet)
+                        cleaned_tweet = [x for x in cleaned_tweet if x != 'http']
+                        if b == 'audi':
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'audi']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'e-tron']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'etron']
+                        if b == 'volkswagen':
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'volkswagen']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'vw']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'id3']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'id.3']
+                        if b == 'mercedes':
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes-benz']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'eqc']
+                        
                         wc_results[kw] += collections.Counter(cleaned_tweet)
                 # neg_avg = sum(neg) / len(neg)
                 # neu_avg = sum(neu) / len(neu)
@@ -169,11 +205,13 @@ def main():
             plt.imshow(wordcloud, interpolation="bilinear")
             plt.axis("off")
             plt.show()
+
             x_axis_vals[kw] = list()
             y_axis_vals[kw] = list()
 
             for date in sorted(results[kw]):
                 neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
+                print(neg_avg)
                 y_axis_vals[kw].append(neg_avg)
                 x_axis_vals[kw].append(str(date))
 
@@ -187,4 +225,9 @@ def main():
         plt.show()
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Offline or Online Data')
+    parser.add_argument("-o", "--online", help="Get Online Data", action="store_true")
+
+    args = parser.parse_args()
+
     main()
