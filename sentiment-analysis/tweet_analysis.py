@@ -116,7 +116,7 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
 
 def main():
     # nltk_downloader()
-    brands = ['audi']#, 'volkswagen', 'mercedes']
+    brands = ['audi', 'volkswagen', 'mercedes']
     keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
 
     for b in brands:
@@ -221,7 +221,7 @@ def main():
         print(y_axis_vals[list(y_axis_vals.keys())[1]])
 
 
-        plt.plot(x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'r--', x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'b--')
+        plt.plot(x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'r--', x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'b--')
         plt.show()
 
 if __name__ == '__main__':
