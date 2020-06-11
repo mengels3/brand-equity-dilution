@@ -42,6 +42,7 @@ from bson import json_util
 
 
 def nltk_downloader():
+	# downloads nltk packages
     nltk.download('twitter_samples')
     nltk.download('punkt')
     nltk.download('wordnet')
@@ -49,29 +50,29 @@ def nltk_downloader():
     nltk.download('stopwords')
     nltk.download('vader_lexicon')
 
+def get_cloud_data(keyword):
+    dbClient = DatabaseClient()
+
+    tweets = list(dbClient.getAllDocuments(keyword))
+    print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
+
+    max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
+    print("Id of latest fetched tweet is %s." %str(max_id))
+
+    # print(type(tweets[0]))
+    with open(keyword + '_data.json', 'a+') as f:
+        f.write(json.dumps(tweets, default=json_util.default, indent=4))
+    return tweets
+
 def get_tweets(keyword):
-    if args.online:
-        dbClient = DatabaseClient()
+    try:
+        with open(keyword + '_data.json', 'r') as f:
+            tweets = json.load(f)
 
-        tweets = list(dbClient.getAllDocuments(keyword))
-        print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
-
-        max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
-        print("Id of latest fetched tweet is %s." %str(max_id))
-
-        print(type(tweets[0]))
-        with open(keyword + '_data.json', 'w+') as f:
-            f.write(json.dumps(tweets,default=json_util.default, indent=4))
         return tweets
-    else:
-        try:
-            with open(keyword + '_data.json', 'r') as f:
-                tweets = json.load(f)
-
-            return tweets
-        except:
-            print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
-            return "No Data"
+    except:
+        print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
+        return "No Data"    
 
 
 def remove_noise(tweet_tokens, stop_words):
@@ -119,6 +120,16 @@ def main():
     brands = ['audi', 'volkswagen', 'mercedes']
     keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
 
+    if args.online:
+        for b in brands:
+            for kw in keywords:
+                if b in kw:
+                    get_cloud_data(kw)
+                    print('Fetched and saved data of "%s' %kw)
+
+    print('Successfully fetched and saved cloud data to JSON Files')
+
+
     for b in brands:
         results = dict()
         wc_results = dict()
@@ -155,6 +166,32 @@ def main():
 
                         # print(cleaned_tweet)
                         cleaned_tweet = [x for x in cleaned_tweet if x != 'http']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != 'https']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != 'rt']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != ',']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '0']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '\'s']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '´´']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '``']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '\'\'']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '.']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '..']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '...']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '=']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != ':']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != ';']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '?']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '!']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '\'']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '"']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '""']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '(']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != ')']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '>']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '<']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '/']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '`']
+                        cleaned_tweet = [x for x in cleaned_tweet if x != '´']
                         if b == 'audi':
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'audi']
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'e-tron']
@@ -164,36 +201,16 @@ def main():
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'vw']
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'id3']
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'id.3']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'vwid3']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'vwid.3']
                         if b == 'mercedes':
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes']
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes-benz']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedesbenz']
+                            cleaned_tweet = [x for x in cleaned_tweet if x != 'benz']
                             cleaned_tweet = [x for x in cleaned_tweet if x != 'eqc']
                         
                         wc_results[kw] += collections.Counter(cleaned_tweet)
-                # neg_avg = sum(neg) / len(neg)
-                # neu_avg = sum(neu) / len(neu)
-                # pos_avg = sum(pos) / len(pos)
-
-                # neg_med = statistics.median(neg)
-                # neu_med = statistics.median(neu)
-                # pos_med = statistics.median(pos)
-
-                # print("%s:\n\tAverages: neg= %s, neu= %s, pos= %s, count= %s\n\tMedian: neg= %s, neu= %s, pos=%s\n" %(kw, str(neg_avg), str(neu_avg), str(pos_avg), str(len(neg)), str(neg_med), str(neu_med), str(pos_med)))
-
-
-                # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-                # labels = 'neg', 'neu', 'pos'
-                # sizes = [neg_avg, neu_avg, pos_avg]
-
-                # fig1, ax1 = plt.subplots()
-                # ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
-                # ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-                # plt.show()
-
-            # negativity of tweets:
-
-        print(wc_results)
 
 
         x_axis_vals = dict()
@@ -212,7 +229,8 @@ def main():
             for date in sorted(results[kw]):
                 neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
                 print(neg_avg)
-                y_axis_vals[kw].append(neg_avg)
+                if len(results[kw][date]['neg']) > 0:
+                    y_axis_vals[kw].append(neg_avg)
                 x_axis_vals[kw].append(str(date))
 
         print(x_axis_vals[list(x_axis_vals.keys())[0]])
