@@ -42,7 +42,7 @@ from bson import json_util
 
 
 def nltk_downloader():
-	# downloads nltk packages
+    # downloads nltk packages
     nltk.download('twitter_samples')
     nltk.download('punkt')
     nltk.download('wordnet')
@@ -60,19 +60,20 @@ def get_cloud_data(keyword):
     print("Id of latest fetched tweet is %s." %str(max_id))
 
     # print(type(tweets[0]))
-    with open(keyword + '_data.json', 'a+') as f:
-        f.write(json.dumps(tweets, default=json_util.default, indent=4))
+    with open(keyword + '_data.json', 'w+') as f:
+        # f.write(json.dumps(tweets, default=json_util.default, indent=4))
+        json.dump(tweets, f, default=json_util.default, indent=4)
     return tweets
 
 def get_tweets(keyword):
-    try:
-        with open(keyword + '_data.json', 'r') as f:
-            tweets = json.load(f)
+    # try:
+    with open(keyword + '_data.json', 'r') as f:
+        tweets = json.load(f)
 
-        return tweets
-    except:
-        print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
-        return "No Data"    
+    return tweets
+    # except:
+    #     print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
+    #     return "No Data"    
 
 
 def remove_noise(tweet_tokens, stop_words):
@@ -118,7 +119,11 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
 def main():
     # nltk_downloader()
     brands = ['audi', 'volkswagen', 'mercedes']
-    keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
+    # keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
+    # keywords = ['audi_etron', 'volkswagen_id3', 'mercedes_eqc']
+    # keywords = ['audi', 'volkswagen', 'mercedes']
+    # keywords = ['mercedes']
+    keywords = ['audi_etron']#, 'audi']
 
     if args.online:
         for b in brands:
@@ -127,7 +132,7 @@ def main():
                     get_cloud_data(kw)
                     print('Fetched and saved data of "%s' %kw)
 
-    print('Successfully fetched and saved cloud data to JSON Files')
+        print('Successfully fetched and saved cloud data to JSON Files')
 
 
     for b in brands:
@@ -213,34 +218,42 @@ def main():
                         wc_results[kw] += collections.Counter(cleaned_tweet)
 
 
-        x_axis_vals = dict()
-        y_axis_vals = dict()
-        for kw in results:
-            wordcloud = WordCloud()
-            wordcloud.generate_from_frequencies(frequencies=wc_results[kw])
-            plt.figure()
-            plt.imshow(wordcloud, interpolation="bilinear")
-            plt.axis("off")
-            plt.show()
-
-            x_axis_vals[kw] = list()
-            y_axis_vals[kw] = list()
-
-            for date in sorted(results[kw]):
-                neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
-                print(neg_avg)
-                if len(results[kw][date]['neg']) > 0:
-                    y_axis_vals[kw].append(neg_avg)
-                x_axis_vals[kw].append(str(date))
-
-        print(x_axis_vals[list(x_axis_vals.keys())[0]])
-        print(y_axis_vals[list(y_axis_vals.keys())[0]])
-        print(x_axis_vals[list(x_axis_vals.keys())[1]])
-        print(y_axis_vals[list(y_axis_vals.keys())[1]])
+                results[kw][date]['value'] = (sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg']))
 
 
-        plt.plot(x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'r--', x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'b--')
-        plt.show()
+        # x_axis_vals = dict()
+        # y_axis_vals = dict()
+        # for kw in results:
+        #     wordcloud = WordCloud()
+        #     wordcloud.generate_from_frequencies(frequencies=wc_results[kw])
+        #     plt.figure()
+        #     plt.imshow(wordcloud, interpolation="bilinear")
+        #     plt.axis("off")
+        #     plt.show()
+
+        #     x_axis_vals[kw] = list()
+        #     y_axis_vals[kw] = list()
+
+        #     for date in sorted(results[kw]):
+        #         neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
+        #         print(neg_avg)
+        #         if len(results[kw][date]['neg']) > 0:
+        #             y_axis_vals[kw].append(neg_avg)
+        #         x_axis_vals[kw].append(str(date))
+
+        # print(x_axis_vals[list(x_axis_vals.keys())[0]])
+        # print(y_axis_vals[list(y_axis_vals.keys())[0]])
+        # print(x_axis_vals[list(x_axis_vals.keys())[1]])
+        # print(y_axis_vals[list(y_axis_vals.keys())[1]])
+
+
+        # plt.plot(x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'r--', x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'b--')
+        # plt.show()
+
+
+    with open('results_%s.json' %datetime.datetime.now().strftime("%Y%m%d%H%M%S"), 'w+') as f:
+        # f.write(json.dumps(tweets, default=json_util.default, indent=4))
+        json.dump(results, f, indent=4)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Offline or Online Data')
