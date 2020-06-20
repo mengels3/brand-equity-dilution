@@ -44,12 +44,12 @@ from threading import Thread
 
 
 def nltk_downloader():
-    # downloads nltk packages
-    nltk.download('twitter_samples')
-    nltk.download('punkt')
-    nltk.download('wordnet')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('stopwords')
+    # # downloads nltk packages
+    # nltk.download('twitter_samples')
+    # nltk.download('punkt')
+    # nltk.download('wordnet')
+    # nltk.download('averaged_perceptron_tagger')
+    # nltk.download('stopwords')
     nltk.download('vader_lexicon')
 
 def get_cloud_data(keyword):
@@ -252,7 +252,7 @@ def get_sentiment_results(b, keywords):
         json.dump(results, f, default=converter, indent=4)
 
 def main():
-    # nltk_downloader()
+    nltk_downloader()
     brands = ['audi', 'volkswagen', 'mercedes']
     keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
     # keywords = ['audi_etron', 'volkswagen_id3', 'mercedes_eqc']
