@@ -1,3 +1,5 @@
+# usr/bin/python3
+# -*- coding: utf-8 -*-
 import sys
 import os
 import nltk
@@ -46,10 +48,10 @@ from threading import Thread
 def nltk_downloader():
     # # downloads nltk packages
     # nltk.download('twitter_samples')
-    # nltk.download('punkt')
-    # nltk.download('wordnet')
-    # nltk.download('averaged_perceptron_tagger')
-    # nltk.download('stopwords')
+    nltk.download('punkt')
+    nltk.download('wordnet')
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('stopwords')
     nltk.download('vader_lexicon')
 
 def get_cloud_data(keyword):
@@ -120,9 +122,39 @@ def converter(o):
     if isinstance(o, datetime.datetime):
         return o.__str__()
 
+def get_last_exec_date(brand):
+    res = dict()
+    try: 
+        with open("%s_results.json" %brand) as f:
+            res = json.load(f)
+        return datetime.datetime.strptime(res['last_exec_date'], "%Y-%m-%d").date()
+    except:
+        print("kein letztes Ausführungsdatum. Alle Daten werden betrachtet")
+        return False
+
+
+def merge_new_old(new, brand):
+    old = dict()
+    try: 
+        with open("%s_results.json" %brand) as f:
+            old = json.load(f)
+        try:
+            results = {**old, **new}
+            return results
+        except:
+            print("Fehler beim Mergen. Nur alte Results werden gespeichert.")
+            return old
+    except:
+        print("Keine alten Daten! Ergebnisse werden gespeichert")
+        return new
+
+
+
+
 def get_sentiment_results(b, keywords):
     results = dict()
     wc_results = dict()
+    last_exec_date = get_last_exec_date(b)
     for kw in keywords:
         if b in kw:
             wc_results[kw] = collections.Counter({})
@@ -138,21 +170,25 @@ def get_sentiment_results(b, keywords):
                 #     tweets = False
 
             if tweets == "No Data":
-                sys.exit()
-            neg, neu, pos = list(), list(), list()
+                sys.exit("Keine Daten! Exit.")
 
             print('Starting Analysis for %s' %kw)
             for tweet in tweets:
                 if tweet['lang'] == 'en':
-                    date = str(datetime.datetime.strptime(tweet['created_at'], "%a %b %d %H:%M:%S %z %Y").date())
+                    date = datetime.datetime.strptime(tweet['created_at'], "%a %b %d %H:%M:%S %z %Y").date()
+                    date_str = str(date)
+
+                    if date == datetime.datetime.now().date() or (last_exec_date and date < last_exec_date):
+                        continue
+                    
                     try:
                         x = results[kw][date]
                     except KeyError:
-                        results[kw][date] = dict()
-                        results[kw][date]['neg'] = list()
-                        results[kw][date]['neu'] = list()
-                        results[kw][date]['pos'] = list()
-                    cleaned_tweet, results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'])
+                        results[kw][date_str] = dict()
+                        results[kw][date_str]['neg'] = list()
+                        results[kw][date_str]['neu'] = list()
+                        results[kw][date_str]['pos'] = list()
+                    cleaned_tweet, results[kw][date_str]['neg'], results[kw][date_str]['neu'], results[kw][date_str]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date_str]['neg'], results[kw][date_str]['neu'], results[kw][date_str]['pos'])
 
                     # # print(cleaned_tweet)
                     # cleaned_tweet = [x for x in cleaned_tweet if x != 'http']
@@ -207,6 +243,7 @@ def get_sentiment_results(b, keywords):
 
     # x_axis_vals = dict()
     # y_axis_vals = dict()
+    led = ""
     for kw in results:
         for date in sorted(results[kw]):
             print((sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])))
@@ -218,6 +255,8 @@ def get_sentiment_results(b, keywords):
             del results[kw][date]['pos']
             del results[kw][date]['neu']
             del results[kw][date]['neg']
+            led = date
+
 
     #     wordcloud = WordCloud()
     #     wordcloud.generate_from_frequencies(frequencies=wc_results[kw])
@@ -246,8 +285,9 @@ def get_sentiment_results(b, keywords):
     # plt.show()
 
 
-    print(results)
-    with open('results_%s_%s.json' %(b, datetime.datetime.now().strftime("%Y%m%d%H%M%S")), 'w+') as f:
+    results = merge_new_old(results, b)
+    results['last_exec_date'] = led
+    with open('%s_results.json' %b, 'w+') as f:
         # f.write(json.dumps(tweets, default=json_util.default, indent=4))
         json.dump(results, f, default=converter, indent=4)
 
@@ -261,6 +301,7 @@ def main():
     # keywords = ['audi_etron']#, 'audi']
 
     if args.online:
+        print("Cloud Daten werden abgefragt. Danach wird Analyse gestartet.")
         for b in brands:
             for kw in keywords:
                 if b in kw:
@@ -279,6 +320,10 @@ def main():
 
 
 if __name__ == '__main__':
+    import locale
+    locale.setlocale(locale.LC_ALL, "en_US.utf8")
+    x = 'Tue May 19 17:32:05 +0000 2020'
+    print(datetime.datetime.strptime(x, '%a %b %d %H:%M:%S %z %Y'))
     parser = argparse.ArgumentParser(description='Offline or Online Data')
     parser.add_argument("-o", "--online", help="Get Online Data", action="store_true")
 
