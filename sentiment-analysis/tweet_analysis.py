@@ -1,3 +1,5 @@
+# usr/bin/python3
+# -*- coding: utf-8 -*-
 import sys
 import os
 import nltk
@@ -40,38 +42,42 @@ from wordcloud import WordCloud
 
 from bson import json_util
 
+from threading import Thread
+
 
 def nltk_downloader():
-    nltk.download('twitter_samples')
+    # # downloads nltk packages
+    # nltk.download('twitter_samples')
     nltk.download('punkt')
     nltk.download('wordnet')
     nltk.download('averaged_perceptron_tagger')
     nltk.download('stopwords')
     nltk.download('vader_lexicon')
 
+def get_cloud_data(keyword):
+    dbClient = DatabaseClient()
+
+    tweets = list(dbClient.getAllDocuments(keyword))
+    print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
+
+    max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
+    print("Id of latest fetched tweet is %s." %str(max_id))
+
+    # print(type(tweets[0]))
+    with open(keyword + '_data.json', 'w+') as f:
+        # f.write(json.dumps(tweets, default=json_util.default, indent=4))
+        json.dump(tweets, f, default=json_util.default, indent=4)
+    return tweets
+
 def get_tweets(keyword):
-    if args.online:
-        dbClient = DatabaseClient()
+    # try:
+    with open(keyword + '_data.json', 'r') as f:
+        tweets = json.load(f)
 
-        tweets = list(dbClient.getAllDocuments(keyword))
-        print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
-
-        max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
-        print("Id of latest fetched tweet is %s." %str(max_id))
-
-        print(type(tweets[0]))
-        with open(keyword + '_data.json', 'w+') as f:
-            f.write(json.dumps(tweets,default=json_util.default, indent=4))
-        return tweets
-    else:
-        try:
-            with open(keyword + '_data.json', 'r') as f:
-                tweets = json.load(f)
-
-            return tweets
-        except:
-            print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
-            return "No Data"
+    return tweets
+    # except:
+    #     print("No Data Stored. Start Script with '-o'-option to receive data from Cloud-DB.")
+    #     return "No Data"    
 
 
 def remove_noise(tweet_tokens, stop_words):
@@ -90,7 +96,6 @@ def remove_noise(tweet_tokens, stop_words):
         else:
             pos = 'a'
 
-        lemmatizer = WordNetLemmatizer()
         token = lemmatizer.lemmatize(token, pos)
 
         if len(token) > 0 and token not in string.punctuation and token.lower() not in stop_words:
@@ -104,7 +109,6 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
 
     cleaned_tweet = remove_noise(word_tokenize(tweet), stop_words)
     
-    sid = SentimentIntensityAnalyzer()
 
     ss = sid.polarity_scores(u" ".join(cleaned_tweet))
 
@@ -114,120 +118,218 @@ def get_sentiment_of_tweet(tweet, neg, neu, pos):
 
     return cleaned_tweet, neg, neu, pos
 
+def converter(o):
+    if isinstance(o, datetime.datetime):
+        return o.__str__()
+
+def get_last_exec_date(brand):
+    res = dict()
+    try: 
+        with open("%s_results.json" %brand) as f:
+            res = json.load(f)
+        return datetime.datetime.strptime(res['last_exec_date'], "%Y-%m-%d").date()
+    except:
+        print("kein letztes Ausführungsdatum. Alle Daten werden betrachtet")
+        return False
+
+
+def merge_new_old(new, brand):
+    old = dict()
+    try: 
+        with open("%s_results.json" %brand) as f:
+            old = json.load(f)
+        try:
+            results = {**old, **new}
+            return results
+        except:
+            print("Fehler beim Mergen. Nur alte Results werden gespeichert.")
+            return old
+    except:
+        print("Keine alten Daten! Ergebnisse werden gespeichert")
+        return new
+
+
+
+
+def get_sentiment_results(b, keywords):
+    results = dict()
+    wc_results = dict()
+    last_exec_date = get_last_exec_date(b)
+    for kw in keywords:
+        if b in kw:
+            wc_results[kw] = collections.Counter({})
+            print("Sentiment Intensity Analysis with noise removal for \"%s\": poitive, negative, neutral percentages" %kw)
+            tweets = False
+
+            results[kw] = dict()
+            
+            # while not tweets:
+            #     try:
+            tweets = get_tweets(kw)
+                # except:
+                #     tweets = False
+
+            if tweets == "No Data":
+                sys.exit("Keine Daten! Exit.")
+
+            print('Starting Analysis for %s' %kw)
+            for tweet in tweets:
+                if tweet['lang'] == 'en':
+                    date = datetime.datetime.strptime(tweet['created_at'], "%a %b %d %H:%M:%S %z %Y").date()
+                    date_str = str(date)
+
+                    if date == datetime.datetime.now().date() or (last_exec_date and date < last_exec_date):
+                        continue
+                    
+                    try:
+                        x = results[kw][date]
+                    except KeyError:
+                        results[kw][date_str] = dict()
+                        results[kw][date_str]['neg'] = list()
+                        results[kw][date_str]['neu'] = list()
+                        results[kw][date_str]['pos'] = list()
+                    cleaned_tweet, results[kw][date_str]['neg'], results[kw][date_str]['neu'], results[kw][date_str]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date_str]['neg'], results[kw][date_str]['neu'], results[kw][date_str]['pos'])
+
+                    # # print(cleaned_tweet)
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != 'http']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != 'https']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != 'rt']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != ',']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '0']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '\'s']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '´´']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '``']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '\'\'']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '.']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '..']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '...']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '=']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != ':']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != ';']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '?']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '!']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '\'']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '"']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '""']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '(']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != ')']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '>']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '<']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '/']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '`']
+                    # cleaned_tweet = [x for x in cleaned_tweet if x != '´']
+                    # if b == 'audi':
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'audi']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'e-tron']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'etron']
+                    # if b == 'volkswagen':
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'volkswagen']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'vw']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'id3']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'id.3']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'vwid3']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'vwid.3']
+                    # if b == 'mercedes':
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes-benz']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedesbenz']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'benz']
+                    #     cleaned_tweet = [x for x in cleaned_tweet if x != 'eqc']
+                    
+                    # wc_results[kw] += collections.Counter(cleaned_tweet)
+
+
+
+
+    # x_axis_vals = dict()
+    # y_axis_vals = dict()
+    led = ""
+    for kw in results:
+        for date in sorted(results[kw]):
+            print((sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])))
+            results[kw][date]['len'] = len(results[kw][date]['pos'])
+            results[kw][date]['pos_avg'] = sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])
+            results[kw][date]['neu_avg'] = sum(results[kw][date]['neu']) / len(results[kw][date]['neu'])
+            results[kw][date]['neg_avg'] = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
+            results[kw][date]['value'] = (sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg']))
+            del results[kw][date]['pos']
+            del results[kw][date]['neu']
+            del results[kw][date]['neg']
+            led = date
+
+
+    #     wordcloud = WordCloud()
+    #     wordcloud.generate_from_frequencies(frequencies=wc_results[kw])
+    #     plt.figure()
+    #     plt.imshow(wordcloud, interpolation="bilinear")
+    #     plt.axis("off")
+    #     plt.show()
+
+    #     x_axis_vals[kw] = list()
+    #     y_axis_vals[kw] = list()
+
+    #     for date in sorted(results[kw]):
+    #         neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
+    #         print(neg_avg)
+    #         if len(results[kw][date]['neg']) > 0:
+    #             y_axis_vals[kw].append(neg_avg)
+    #         x_axis_vals[kw].append(str(date))
+
+    # print(x_axis_vals[list(x_axis_vals.keys())[0]])
+    # print(y_axis_vals[list(y_axis_vals.keys())[0]])
+    # print(x_axis_vals[list(x_axis_vals.keys())[1]])
+    # print(y_axis_vals[list(y_axis_vals.keys())[1]])
+
+
+    # plt.plot(x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'r--', x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'b--')
+    # plt.show()
+
+
+    results = merge_new_old(results, b)
+    results['last_exec_date'] = led
+    with open('%s_results.json' %b, 'w+') as f:
+        # f.write(json.dumps(tweets, default=json_util.default, indent=4))
+        json.dump(results, f, default=converter, indent=4)
+
 def main():
-    # nltk_downloader()
+    nltk_downloader()
     brands = ['audi', 'volkswagen', 'mercedes']
     keywords = ['audi_etron', 'audi', 'volkswagen_id3', 'volkswagen', 'mercedes_eqc', 'mercedes']
+    # keywords = ['audi_etron', 'volkswagen_id3', 'mercedes_eqc']
+    # keywords = ['audi', 'volkswagen', 'mercedes']
+    # keywords = ['mercedes']
+    # keywords = ['audi_etron']#, 'audi']
+
+    if args.online:
+        print("Cloud Daten werden abgefragt. Danach wird Analyse gestartet.")
+        for b in brands:
+            for kw in keywords:
+                if b in kw:
+                    get_cloud_data(kw)
+                    print('Fetched and saved data of "%s' %kw)
+
+        print('Successfully fetched and saved cloud data to JSON Files')
+
+        exit()
+
 
     for b in brands:
-        results = dict()
-        wc_results = dict()
-        for kw in keywords:
-            if b in kw:
-                wc_results[kw] = collections.Counter({})
-                print("Sentiment Intensity Analysis with noise removal for \"%s\": poitive, negative, neutral percentages" %kw)
-                tweets = False
+        get_sentiment_results(b, keywords)
+        # t = Thread(target=get_sentiment_results, args=(b, keywords))
+        # t.start()
 
-                results[kw] = dict()
-                
-                # while not tweets:
-                #     try:
-                tweets = get_tweets(kw)
-                    # except:
-                    #     tweets = False
-
-                if tweets == "No Data":
-                    sys.exit()
-                neg, neu, pos = list(), list(), list()
-
-                print('Starting Analysis for %s' %kw)
-                for tweet in tweets:
-                    if tweet['lang'] == 'en':
-                        date = datetime.datetime.strptime(tweet['created_at'], '%a %b %d %H:%M:%S %z %Y').date()
-                        try:
-                            x = results[kw][date]
-                        except KeyError:
-                            results[kw][date] = dict()
-                            results[kw][date]['neg'] = list()
-                            results[kw][date]['neu'] = list()
-                            results[kw][date]['pos'] = list()
-                        cleaned_tweet, results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date]['neg'], results[kw][date]['neu'], results[kw][date]['pos'])
-
-                        # print(cleaned_tweet)
-                        cleaned_tweet = [x for x in cleaned_tweet if x != 'http']
-                        if b == 'audi':
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'audi']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'e-tron']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'etron']
-                        if b == 'volkswagen':
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'volkswagen']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'vw']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'id3']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'id.3']
-                        if b == 'mercedes':
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'mercedes-benz']
-                            cleaned_tweet = [x for x in cleaned_tweet if x != 'eqc']
-                        
-                        wc_results[kw] += collections.Counter(cleaned_tweet)
-                # neg_avg = sum(neg) / len(neg)
-                # neu_avg = sum(neu) / len(neu)
-                # pos_avg = sum(pos) / len(pos)
-
-                # neg_med = statistics.median(neg)
-                # neu_med = statistics.median(neu)
-                # pos_med = statistics.median(pos)
-
-                # print("%s:\n\tAverages: neg= %s, neu= %s, pos= %s, count= %s\n\tMedian: neg= %s, neu= %s, pos=%s\n" %(kw, str(neg_avg), str(neu_avg), str(pos_avg), str(len(neg)), str(neg_med), str(neu_med), str(pos_med)))
-
-
-                # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-                # labels = 'neg', 'neu', 'pos'
-                # sizes = [neg_avg, neu_avg, pos_avg]
-
-                # fig1, ax1 = plt.subplots()
-                # ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
-                # ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-                # plt.show()
-
-            # negativity of tweets:
-
-        print(wc_results)
-
-
-        x_axis_vals = dict()
-        y_axis_vals = dict()
-        for kw in results:
-            wordcloud = WordCloud()
-            wordcloud.generate_from_frequencies(frequencies=wc_results[kw])
-            plt.figure()
-            plt.imshow(wordcloud, interpolation="bilinear")
-            plt.axis("off")
-            plt.show()
-
-            x_axis_vals[kw] = list()
-            y_axis_vals[kw] = list()
-
-            for date in sorted(results[kw]):
-                neg_avg = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
-                print(neg_avg)
-                y_axis_vals[kw].append(neg_avg)
-                x_axis_vals[kw].append(str(date))
-
-        print(x_axis_vals[list(x_axis_vals.keys())[0]])
-        print(y_axis_vals[list(y_axis_vals.keys())[0]])
-        print(x_axis_vals[list(x_axis_vals.keys())[1]])
-        print(y_axis_vals[list(y_axis_vals.keys())[1]])
-
-
-        plt.plot(x_axis_vals[list(x_axis_vals.keys())[0]], y_axis_vals[list(y_axis_vals.keys())[0]], 'r--', x_axis_vals[list(x_axis_vals.keys())[1]], y_axis_vals[list(y_axis_vals.keys())[1]], 'b--')
-        plt.show()
 
 if __name__ == '__main__':
+    import locale
+    locale.setlocale(locale.LC_ALL, "en_US.utf8")
+    x = 'Tue May 19 17:32:05 +0000 2020'
+    print(datetime.datetime.strptime(x, '%a %b %d %H:%M:%S %z %Y'))
     parser = argparse.ArgumentParser(description='Offline or Online Data')
     parser.add_argument("-o", "--online", help="Get Online Data", action="store_true")
 
     args = parser.parse_args()
+
+    sid = SentimentIntensityAnalyzer()
+    lemmatizer = WordNetLemmatizer()
 
     main()
