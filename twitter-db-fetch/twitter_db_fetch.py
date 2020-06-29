@@ -79,12 +79,14 @@ def transform_tweet(tweet):
     return {
         'created_at': tweet['created_at'],
         'id_str': tweet['id_str'],
+        'id_int': tweet['id']
         'full_text': tweet['full_text'],
         'isRetweet': isRetweet,
         'retweeted_status_id_str': retweetedStatusIdStr,
         'lang': tweet['lang'],
         'user': {
             'id_str': tweet['user']['id_str'],
+            'id_int': tweet['user']['id'],
             'name': tweet['user']['name'],
             'screen_name': tweet['user']['screen_name'],
             'location': tweet['user']['location'],
@@ -173,7 +175,6 @@ def main():
     dbClient.getLatestTweetId('audi_etron', 1, 1)
     # maybe wait for connection?
     time.sleep(1)
-
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
     populateTweetsInDatabase(
         'audi_etron', 'audi etron OR audi e-tron', 30, 30, dbClient)
