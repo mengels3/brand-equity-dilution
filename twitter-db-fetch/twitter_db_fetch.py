@@ -19,6 +19,7 @@ def fetch_latest_tweets(query, max_id, batch_size):
         'count': batch_size,
         'include_entities': 'false',
         'tweet_mode': 'extended',
+        'lang': 'en'
     }
 
     if max_id is not None:
