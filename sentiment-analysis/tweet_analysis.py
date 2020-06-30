@@ -158,10 +158,12 @@ def get_sentiment_results(b, keywords):
     for kw in keywords:
         if b in kw:
             wc_results[kw] = collections.Counter({})
-            print("Sentiment Intensity Analysis with noise removal for \"%s\": poitive, negative, neutral percentages" %kw)
+            print("Sentiment Intensity Analysis with noise removal for \"%s\": positive, negative, neutral percentages" %kw)
             tweets = False
 
-            results[kw] = dict()
+            if kw not in results.keys():
+                results[kw] = dict()
+
             
             # while not tweets:
             #     try:
@@ -178,17 +180,18 @@ def get_sentiment_results(b, keywords):
                     date = datetime.datetime.strptime(tweet['created_at'], "%a %b %d %H:%M:%S %z %Y").date()
                     date_str = str(date)
 
-                    if date == datetime.datetime.now().date() or (last_exec_date and date < last_exec_date):
-                        continue
+                    #if date == datetime.datetime.now().date() or (last_exec_date and date < last_exec_date):
+                    #    continue
                     
                     try:
-                        x = results[kw][date]
+                        x = results[kw][date_str]
                     except KeyError:
                         results[kw][date_str] = dict()
                         results[kw][date_str]['neg'] = list()
                         results[kw][date_str]['neu'] = list()
                         results[kw][date_str]['pos'] = list()
                     cleaned_tweet, results[kw][date_str]['neg'], results[kw][date_str]['neu'], results[kw][date_str]['pos'] = get_sentiment_of_tweet(tweet['full_text'], results[kw][date_str]['neg'], results[kw][date_str]['neu'], results[kw][date_str]['pos'])
+
 
                     # # print(cleaned_tweet)
                     # cleaned_tweet = [x for x in cleaned_tweet if x != 'http']
@@ -244,14 +247,18 @@ def get_sentiment_results(b, keywords):
     # x_axis_vals = dict()
     # y_axis_vals = dict()
     led = ""
+    print(results)
     for kw in results:
         for date in sorted(results[kw]):
             print((sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])))
-            results[kw][date]['len'] = len(results[kw][date]['pos'])
-            results[kw][date]['pos_avg'] = sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])
-            results[kw][date]['neu_avg'] = sum(results[kw][date]['neu']) / len(results[kw][date]['neu'])
-            results[kw][date]['neg_avg'] = sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])
-            results[kw][date]['value'] = (sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg']))
+            print(len(results[kw][date]['pos']))
+            print(len(results[kw][date]['neg']))
+            print(len(results[kw][date]['neu']))
+            results[kw][date]['len'] = deepcopy(len(results[kw][date]['pos']))
+            results[kw][date]['pos_avg'] = deepcopy(sum(results[kw][date]['pos']) / len(results[kw][date]['pos']))
+            results[kw][date]['neu_avg'] = deepcopy(sum(results[kw][date]['neu']) / len(results[kw][date]['neu']))
+            results[kw][date]['neg_avg'] = deepcopy(sum(results[kw][date]['neg']) / len(results[kw][date]['neg']))
+            results[kw][date]['value'] = deepcopy((sum(results[kw][date]['pos']) / len(results[kw][date]['pos'])) - (sum(results[kw][date]['neg']) / len(results[kw][date]['neg'])))
             del results[kw][date]['pos']
             del results[kw][date]['neu']
             del results[kw][date]['neg']
