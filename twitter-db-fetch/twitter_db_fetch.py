@@ -80,7 +80,7 @@ def transform_tweet(tweet):
     return {
         'created_at': tweet['created_at'],
         'id_str': tweet['id_str'],
-        'id_int': tweet['id']
+        'id_int': tweet['id'],
         'full_text': tweet['full_text'],
         'isRetweet': isRetweet,
         'retweeted_status_id_str': retweetedStatusIdStr,
