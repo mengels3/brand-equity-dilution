@@ -178,7 +178,7 @@ def main():
     time.sleep(1)
     # 40 tweets every 3 seconds = 12.000 tweets per 15 minutes
     populateTweetsInDatabase(
-        'audi_etron', 'audi etron OR audi e-tron', 30, 30, dbClient)
+        'audi_etron', 'audi etron OR audi e-tron OR audi e tron', 30, 30, dbClient)
     populateTweetsInDatabase('audi', 'audi', 30, 30, dbClient)
     populateTweetsInDatabase(
         'google_stadia', 'google stadia OR stadia', 30, 30, dbClient)
@@ -186,7 +186,7 @@ def main():
     populateTweetsInDatabase(
         'volkswagen', 'vw OR volkswagen', 30, 30, dbClient)
     populateTweetsInDatabase(
-        'volkswagen_id3', 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3', 30, 30, dbClient)
+        'volkswagen_id3', 'vw id.3 OR volkswagen id.3 OR vw id3 OR volkswagen id3 OR volkswagen id 3', 30, 30, dbClient)
     populateTweetsInDatabase(
         'mercedes', 'mercedes OR mercedes-benz', 30, 30, dbClient)
     populateTweetsInDatabase(

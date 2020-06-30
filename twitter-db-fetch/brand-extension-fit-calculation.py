@@ -27,8 +27,10 @@ def calculateTermFrequency(dbClient, collection):
         sentence = re.sub(r'[\n]+', ' ', sentence)
         # remove all @-handles such as @sam_harris
         sentence = re.sub(r'(@[^\s]+)', '', sentence)
+        # remove t.co shortener url
+        sentence = re.sub(r'(\S*t\.co\S*)', ' ', sentence)
         # remove all .com links beacause twitter images tend not to specify https which undergoes our link filter
-        sentence = re.sub(r'(\S*\.com\/*\S*)', ' ', sentence)
+        sentence = re.sub(r'(\S*\.com*\S*)', ' ', sentence)
         # collapse all "-"
         sentence = re.sub('-', '', sentence)
         # remove all non alphanumeric chars
