@@ -2,6 +2,7 @@ from database_client import DatabaseClient
 from datetime import datetime, timedelta
 import matplotlib.dates
 import matplotlib.pyplot as plt
+import json
 
 dbClient = DatabaseClient()
 
@@ -27,13 +28,9 @@ def calculateGraphOverTime():
     # only take tweets from last 14 days
     tweetsMainLastTwoWeeks = list(filter(lambda tweet: datetime.strptime(
         tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("audi")))
-    tweetsMainLastTwoWeeksCount = len(tweetsMainLastTwoWeeks)
-    print("main: " + str(tweetsMainLastTwoWeeksCount))
 
     tweetsExtensionLastTwoWeeks = list(filter(lambda tweet: datetime.strptime(
         tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("audi_etron")))
-    tweetsExtensionLastTwoWeeksCount = len(tweetsExtensionLastTwoWeeks)
-    print("extension: " + str(tweetsExtensionLastTwoWeeksCount))
 
     timestamps = []
     values = []
@@ -59,6 +56,8 @@ def calculateGraphOverTime():
     print(timestamps)
     print(values)
 
+    writeToJsonFile(timestamps, values)
+
     # plot
     plt.plot(timestamps, values)
     # beautify the x-labels
@@ -68,8 +67,20 @@ def calculateGraphOverTime():
     plt.show()
 
 
+def writeToJsonFile(timestamps, values):
+    data = []
+    fit = 0.213
+    for i in range(len(timestamps)):
+        data.insert(i, {'datetime': timestamps[i].strftime(
+            '%Y-%m-%d'), 'visibility': values[i], 'likelihood': values[i] * fit})
+
+    with open('dilution-likelihood.json', 'w') as outfile:
+        json.dump(data, outfile)
+
+
 def main():
-    calculateVisibilityForToday()
+    # calculateVisibilityForToday()
+    calculateGraphOverTime()
 
 
 if __name__ == "__main__":
