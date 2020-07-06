@@ -12,10 +12,10 @@ def calculateVisibilityForToday():
     threeDaysAgo = datetime.now() - timedelta(days=3)
 
     tweetsMainLast3daysCount = len(list(filter(lambda tweet: datetime.strptime(
-        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') >= threeDaysAgo, dbClient.getAllDocuments("audi"))))
+        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') >= threeDaysAgo, dbClient.getAllDocuments("mercedes"))))
 
     tweetsExtensionLast3daysCount = len(list(filter(lambda tweet: datetime.strptime(
-        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') >= threeDaysAgo, dbClient.getAllDocuments("audi_etron"))))
+        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') >= threeDaysAgo, dbClient.getAllDocuments("mercedes_eqc"))))
 
     fraction = tweetsExtensionLast3daysCount / tweetsMainLast3daysCount
     print("visibility of extension is: " + str(fraction))
@@ -27,10 +27,10 @@ def calculateGraphOverTime():
 
     # only take tweets from last 14 days
     tweetsMainLastTwoWeeks = list(filter(lambda tweet: datetime.strptime(
-        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("audi")))
+        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("volkswagen")))
 
     tweetsExtensionLastTwoWeeks = list(filter(lambda tweet: datetime.strptime(
-        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("audi_etron")))
+        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("volkswagen_id3")))
 
     timestamps = []
     values = []
@@ -48,7 +48,7 @@ def calculateGraphOverTime():
             tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > (datetime.now() - timedelta(days=i+1)), lowerBoundExtension))
 
         timestamp = datetime.now() - timedelta(days=i)
-        fraction = len(upperAndLowerBoundExtension) / \
+        fraction = 0 if len(upperAndLowerBoundMain) == 0 else len(upperAndLowerBoundExtension) / \
             len(upperAndLowerBoundMain)
         timestamps.insert(i, timestamp)
         values.insert(i, fraction)
@@ -71,10 +71,10 @@ def writeToJsonFile(timestamps, values):
     data = []
     fit = 0.213
     for i in range(len(timestamps)):
-        data.insert(i, {'datetime': timestamps[i].strftime(
+        data.insert(i, {'date': timestamps[i].strftime(
             '%Y-%m-%d'), 'visibility': values[i], 'likelihood': values[i] * fit})
 
-    with open('dilution-likelihood.json', 'w') as outfile:
+    with open('dilution-likelihood-volkswagen.json', 'w') as outfile:
         json.dump(data, outfile)
 
 
