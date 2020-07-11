@@ -90,13 +90,14 @@ def mergeData(main_name, extension_name):
 
 
 def main():
-    # mergeData('mercedes', 'mercedes_eqc')
+    main = 'mercedes'
+    extension = 'mercedes_eqc'
+    mergeData(main, extension)
 
-    with open('twitter-db-fetch/results/merged-data-mercedes.json') as f:
-        data = json.load(f)
-
-    data.reverse()
-    plotAggregateGraph(data)
+    # with open('twitter-db-fetch/results/merged-data-'+main+'.json') as f:
+    #     data = json.load(f)
+    # data.reverse()
+    # plotAggregateGraph(data)
 
 
 if __name__ == "__main__":
