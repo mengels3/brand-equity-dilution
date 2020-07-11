@@ -92,7 +92,11 @@ def mergeData(main_name, extension_name):
 
 
 def logBedi(values):
-    return list(map(lambda bedi: math.log(bedi + 1, 2), values))
+    return list(map(lambda bedi: posOrNeg(bedi) * math.log(abs(bedi) + 1, 2), values))
+
+
+def posOrNeg(num):
+    return -1 if num < 0 else 1
 
 
 def main():
