@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 import json
+import math
 
 # [{
 #     "date": "2020-07-05",
@@ -81,12 +82,17 @@ def mergeData(main_name, extension_name):
             value = (extension_sent - main_sent) / 2
             datapoint['sentiment'] = value
             datapoint['bedi'] = value * datapoint['likelihood']
+            datapoint['log_bedi'] = math.log(datapoint['bedi'] + 1, 2)
             mergedData.append(datapoint)
         except Exception as ex:
             print('missing sentiment for date', ex)
 
     with open('twitter-db-fetch/results/merged-data-'+main_name+'.json', 'w') as outfile:
         json.dump(mergedData, outfile)
+
+
+def logBedi(values):
+    return list(map(lambda bedi: math.log(bedi + 1, 2), values))
 
 
 def main():
