@@ -51,12 +51,14 @@ $( document ).ready(function() {
         type: 'line',
         data: {
             labels: labels,
+            fill: false,
             datasets: [{
                 label: 'BEDI Audi e-tron',
                 data: bedi_audi,
                 yAxisID: 'A',
                 borderColor: '#00aaee',
-                borderWidth: 4
+                borderWidth: 4,
+                fill: false,
             },
             {
                 label: 'Sentiment Audi e-tron',
@@ -65,6 +67,7 @@ $( document ).ready(function() {
                 borderColor: '#ff0000',
                 borderWidth: 4,
                 hidden: true,
+                fill: false,
             },
             {
                 label: 'Likelihood Audi e-tron',
@@ -72,7 +75,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#00ee00',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'Visibility Audi e-tron',
@@ -80,14 +84,16 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#ffdd00',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'BEDI VW id.3',
                 data: bedi_vw,
                 yAxisID: 'A',
                 borderColor: '#0066ee',
-                borderWidth: 4
+                borderWidth: 4,
+                fill: false,
             },
             {
                 label: 'Sentiment VW id.3',
@@ -95,7 +101,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#bb2200',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'Likelihood VW id.3',
@@ -103,7 +110,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#44cc44',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'Visibility VW id.3',
@@ -111,7 +119,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#ffbb00',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'BEDI Mercedes EQC',
@@ -119,6 +128,7 @@ $( document ).ready(function() {
                 yAxisID: 'A',
                 borderColor: '#0022ee',
                 borderWidth: 4,
+                fill: false,
             },
             {
                 label: 'Sentiment Mercedes EQC',
@@ -126,7 +136,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#884400',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'Likelihood Mercedes EQC',
@@ -134,7 +145,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#88aa88',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             },
             {
                 label: 'Visibility Mercedes EQC',
@@ -142,7 +154,8 @@ $( document ).ready(function() {
                 yAxisID: 'B',
                 borderColor: '#ff8800',
                 borderWidth: 4,
-                hidden: true
+                hidden: true,
+                fill: false,
             }
             ]
         },
