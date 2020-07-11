@@ -21,16 +21,16 @@ def calculateVisibilityForToday():
     print("visibility of extension is: " + str(fraction))
 
 
-def calculateGraphOverTime():
+def calculateGraphOverTime(main, extension, fit):
     # get all tweets for main brand and extension
     twoWeeksAgo = datetime.now() - timedelta(days=14)
 
     # only take tweets from last 14 days
     tweetsMainLastTwoWeeks = list(filter(lambda tweet: datetime.strptime(
-        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("volkswagen")))
+        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments(main)))
 
     tweetsExtensionLastTwoWeeks = list(filter(lambda tweet: datetime.strptime(
-        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments("volkswagen_id3")))
+        tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y') > twoWeeksAgo, dbClient.getAllDocuments(extension)))
 
     timestamps = []
     values = []
@@ -56,7 +56,7 @@ def calculateGraphOverTime():
     print(timestamps)
     print(values)
 
-    writeToJsonFile(timestamps, values)
+    writeToJsonFile(timestamps, values, main, fit)
 
     # plot
     plt.plot(timestamps, values)
@@ -67,20 +67,22 @@ def calculateGraphOverTime():
     plt.show()
 
 
-def writeToJsonFile(timestamps, values):
+def writeToJsonFile(timestamps, values, main_name, fit):
     data = []
-    fit = 0.213
     for i in range(len(timestamps)):
         data.insert(i, {'date': timestamps[i].strftime(
             '%Y-%m-%d'), 'visibility': values[i], 'likelihood': values[i] * fit})
 
-    with open('dilution-likelihood-volkswagen.json', 'w') as outfile:
+    with open('twitter-db-fetch/results/dilution-likelihood-' + main_name + '.json', 'w') as outfile:
         json.dump(data, outfile)
 
 
 def main():
+    main = 'volkswagen'
+    extension = 'volkswagen_id3'
+    fit = 0.134
     # calculateVisibilityForToday()
-    calculateGraphOverTime()
+    calculateGraphOverTime(main, extension, fit)
 
 
 if __name__ == "__main__":

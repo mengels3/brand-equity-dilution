@@ -94,19 +94,29 @@ def calculateMeanFractionalDifference(termFreqMain, termFreqExtension):
     return meanDifference
 
 
-dbClient = DatabaseClient()
-termFrequencyAudi = calculateTermFrequency(dbClient, 'audi')
-termFrequencyAudi.pop('audi', None)
-fDist = FreqDist(termFrequencyAudi)
-fDist.plot(35)
+def main():
 
-termFrequencyAudiEtron = calculateTermFrequency(dbClient, 'audi_etron')
-termFrequencyAudiEtron.pop('audi', None)
-termFrequencyAudiEtron.pop('etron', None)
-fDist = FreqDist(termFrequencyAudiEtron)
-fDist.plot(35)
+    main = 'volkswagen'
+    extension = 'volkswagen_id3'
 
-meanDifference = calculateMeanFractionalDifference(
-    termFrequencyAudi, termFrequencyAudiEtron)
-print('Mean difference in frequency as measure for product fit: ' +
-      str(meanDifference))
+    dbClient = DatabaseClient()
+    termFrequencyMain = calculateTermFrequency(dbClient, main)
+    termFrequencyMain.pop(main, None)
+    fDist = FreqDist(termFrequencyMain)
+    fDist.plot(35)
+
+    termFrequencyExtension = calculateTermFrequency(dbClient, extension)
+    # pretty output
+    termFrequencyExtension.pop(main, None)
+    termFrequencyExtension.pop('id3', None)
+    fDist = FreqDist(termFrequencyExtension)
+    fDist.plot(35)
+
+    meanDifference = calculateMeanFractionalDifference(
+        termFrequencyMain, termFrequencyExtension)
+    print('Mean difference in frequency as measure for product fit: ' +
+          str(meanDifference))
+
+
+if __name__ == "__main__":
+    main()
