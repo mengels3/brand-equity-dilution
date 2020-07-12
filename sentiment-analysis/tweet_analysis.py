@@ -55,19 +55,23 @@ def nltk_downloader():
     nltk.download('vader_lexicon')
 
 def get_cloud_data(keyword):
-    dbClient = DatabaseClient()
+    for i in range(0,5):
+        try:
+            dbClient = DatabaseClient()
 
-    tweets = list(dbClient.getAllDocuments(keyword))
-    print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
+            tweets = list(dbClient.getAllDocuments(keyword))
+            print("Currently there are %s tweets stored in the database collection '%s'." %(str(len(tweets)), keyword))
 
-    max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
-    print("Id of latest fetched tweet is %s." %str(max_id))
+            max_id = max(list(map(lambda tweet: int(tweet['id_str']), tweets)))
+            print("Id of latest fetched tweet is %s." %str(max_id))
 
-    # print(type(tweets[0]))
-    with open(keyword + '_data.json', 'w+') as f:
-        # f.write(json.dumps(tweets, default=json_util.default, indent=4))
-        json.dump(tweets, f, default=json_util.default, indent=4)
-    return tweets
+            # print(type(tweets[0]))
+            with open(keyword + '_data.json', 'w+') as f:
+                # f.write(json.dumps(tweets, default=json_util.default, indent=4))
+                json.dump(tweets, f, default=json_util.default, indent=4)
+            return tweets
+        except:
+            print("A Database Error... Wait 10sec an try again")
 
 def get_tweets(keyword):
     # try:
