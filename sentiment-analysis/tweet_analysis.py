@@ -13,6 +13,7 @@ import datetime
 import collections
 import json
 import argparse
+import time
 
 import matplotlib.pyplot as plt
 
@@ -72,6 +73,7 @@ def get_cloud_data(keyword):
             return tweets
         except:
             print("A Database Error... Wait 10sec an try again")
+            time.sleep(10)
 
 def get_tweets(keyword):
     # try:
