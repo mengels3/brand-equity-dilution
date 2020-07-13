@@ -78,9 +78,9 @@ def writeToJsonFile(timestamps, values, main_name, fit):
 
 
 def main():
-    main = 'volkswagen'
-    extension = 'volkswagen_id3'
-    fit = 0.134
+    main = 'audi'
+    extension = 'audi_etron'
+    fit = 0.203
     # calculateVisibilityForToday()
     calculateGraphOverTime(main, extension, fit)
 

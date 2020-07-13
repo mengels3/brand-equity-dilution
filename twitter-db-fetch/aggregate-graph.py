@@ -69,7 +69,7 @@ def mergeData(main_name, extension_name):
     with open('twitter-db-fetch/results/dilution-likelihood-'+main_name+'.json') as f:
         likelihood = json.load(f)
 
-    with open('sentiment-analysis/'+main_name+'_results.json') as f:
+    with open('sentiment-analysis/export/json/'+main_name+'_results.json') as f:
         sentiment = json.load(f)
 
     mergedData = list()
@@ -100,8 +100,8 @@ def posOrNeg(num):
 
 
 def main():
-    main = 'mercedes'
-    extension = 'mercedes_eqc'
+    main = 'volkswagen'
+    extension = 'volkswagen_id3'
     mergeData(main, extension)
 
     # with open('twitter-db-fetch/results/merged-data-'+main+'.json') as f:
