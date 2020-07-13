@@ -5,15 +5,17 @@ brands = ['audi', 'volkswagen', 'mercedes']
 
 for b in brands:
 	data = dict()
-	with open(b + "_results.json") as f:
+	with open("export/json/" + b + "_results.json") as f:
 		data = json.load(f)
 	print(data)
+	values_b = list()
+	values_e = list()
 	for k in data:
 		if k != "last_exec_date":
 			print(k)
 			dates = sorted(data[k].keys())
 			values = list()
-			for date in dates:
+			for date in sorted(dates):
 				values.append(data[k][date]['value'])
 
 
