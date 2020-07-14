@@ -7,7 +7,6 @@ $( document ).ready(function() {
 
     var labels = [];
     var bedi_audi = [];
-    var visibility_audi = [];
     var sentiment_audi = [];
     var likelihood_audi = [];
     $.getJSON('data/merged-data-audi.json', function(data) {
@@ -16,33 +15,30 @@ $( document ).ready(function() {
         results_audi.forEach(function(item){
             labels.push(item.date);
             bedi_audi.push(item.bedi);
-            visibility_audi.push(item.visibility);
             sentiment_audi.push(item.sentiment);
             likelihood_audi.push(item.likelihood);
         });
     });
     var bedi_vw = [];
-    var visibility_vw = [];
     var sentiment_vw = [];
     var likelihood_vw = [];
     $.getJSON('data/merged-data-volkswagen.json', function(data2) {
         results_vw = data2;
+        results_vw.sort(compare);
         results_vw.forEach(function(item2){
             bedi_vw.push(item2.bedi);
-            visibility_vw.push(item2.visibility);
             sentiment_vw.push(item2.sentiment);
             likelihood_vw.push(item2.likelihood);
         });
     });
     var bedi_mercedes = [];
-    var visibility_mercedes = [];
     var sentiment_mercedes = [];
     var likelihood_mercedes = [];
     $.getJSON('data/merged-data-mercedes.json', function(data3) {
         results_mercedes = data3;
+        results_mercedes.sort(compare);
         results_mercedes.forEach(function(item3){
             bedi_mercedes.push(item3.bedi);
-            visibility_mercedes.push(item3.visibility);
             sentiment_mercedes.push(item3.sentiment);
             likelihood_mercedes.push(item3.likelihood);
         });
@@ -79,15 +75,6 @@ $( document ).ready(function() {
                 fill: false,
             },
             {
-                label: 'Visibility Audi e-tron',
-                data: visibility_audi,
-                yAxisID: 'B',
-                borderColor: '#ffdd00',
-                borderWidth: 4,
-                hidden: true,
-                fill: false,
-            },
-            {
                 label: 'BEDI VW id.3',
                 data: bedi_vw,
                 yAxisID: 'A',
@@ -109,15 +96,6 @@ $( document ).ready(function() {
                 data: likelihood_vw,
                 yAxisID: 'B',
                 borderColor: '#44cc44',
-                borderWidth: 4,
-                hidden: true,
-                fill: false,
-            },
-            {
-                label: 'Visibility VW id.3',
-                data: visibility_vw,
-                yAxisID: 'B',
-                borderColor: '#ffbb00',
                 borderWidth: 4,
                 hidden: true,
                 fill: false,
@@ -148,15 +126,6 @@ $( document ).ready(function() {
                 hidden: true,
                 fill: false,
             },
-            {
-                label: 'Visibility Mercedes EQC',
-                data: visibility_mercedes,
-                yAxisID: 'B',
-                borderColor: '#ff8800',
-                borderWidth: 4,
-                hidden: true,
-                fill: false,
-            }
             ]
         },
         options: {
@@ -169,22 +138,22 @@ $( document ).ready(function() {
                         display: true,
                         labelString: 'BEDI',
                     },
-                    // ticks:{
-                    //     min: -0.005,
-                    //     max: 0.005
-                    // }
+                    ticks:{
+                        min: -0.0015,
+                        max: 0.0015
+                    }
                   }, {
                     id: 'B',
                     type: 'linear',
                     position: 'right',
                     scaleLabel: {
                         display: true,
-                        labelString: 'Sentiment, Likelihood, Visibility',
+                        labelString: 'Sentiment & Likelihood',
                     },
-                    // ticks: {
-                    //   max: 0.2,
-                    //   min: -0.2
-                    // }
+                    ticks: {
+                      max: 0.15,
+                      min: -0.15
+                    }
                   }]
             },
             responsive: true,
@@ -206,9 +175,6 @@ $( document ).ready(function() {
         myChart.data.datasets[6].hidden = false
         myChart.data.datasets[7].hidden = false
         myChart.data.datasets[8].hidden = false
-        myChart.data.datasets[9].hidden = false
-        myChart.data.datasets[10].hidden = false
-        myChart.data.datasets[11].hidden = false
         myChart.update()
     })
 
@@ -216,15 +182,12 @@ $( document ).ready(function() {
         myChart.data.datasets[0].hidden = false
         myChart.data.datasets[1].hidden = false
         myChart.data.datasets[2].hidden = false
-        myChart.data.datasets[3].hidden = false
+        myChart.data.datasets[3].hidden = true
         myChart.data.datasets[4].hidden = true
         myChart.data.datasets[5].hidden = true
         myChart.data.datasets[6].hidden = true
         myChart.data.datasets[7].hidden = true
         myChart.data.datasets[8].hidden = true
-        myChart.data.datasets[9].hidden = true
-        myChart.data.datasets[10].hidden = true
-        myChart.data.datasets[11].hidden = true
         myChart.update()
     })
 
@@ -232,15 +195,12 @@ $( document ).ready(function() {
         myChart.data.datasets[0].hidden = true
         myChart.data.datasets[1].hidden = true
         myChart.data.datasets[2].hidden = true
-        myChart.data.datasets[3].hidden = true
+        myChart.data.datasets[3].hidden = false
         myChart.data.datasets[4].hidden = false
         myChart.data.datasets[5].hidden = false
-        myChart.data.datasets[6].hidden = false
-        myChart.data.datasets[7].hidden = false
+        myChart.data.datasets[6].hidden = true
+        myChart.data.datasets[7].hidden = true
         myChart.data.datasets[8].hidden = true
-        myChart.data.datasets[9].hidden = true
-        myChart.data.datasets[10].hidden = true
-        myChart.data.datasets[11].hidden = true
         myChart.update()
     })
 
@@ -251,12 +211,9 @@ $( document ).ready(function() {
         myChart.data.datasets[3].hidden = true
         myChart.data.datasets[4].hidden = true
         myChart.data.datasets[5].hidden = true
-        myChart.data.datasets[6].hidden = true
-        myChart.data.datasets[7].hidden = true
+        myChart.data.datasets[6].hidden = false
+        myChart.data.datasets[7].hidden = false
         myChart.data.datasets[8].hidden = false
-        myChart.data.datasets[9].hidden = false
-        myChart.data.datasets[10].hidden = false
-        myChart.data.datasets[11].hidden = false
         myChart.update()
     })
 
@@ -264,15 +221,12 @@ $( document ).ready(function() {
         myChart.data.datasets[0].hidden = false
         myChart.data.datasets[1].hidden = true
         myChart.data.datasets[2].hidden = true
-        myChart.data.datasets[3].hidden = true
-        myChart.data.datasets[4].hidden = false
+        myChart.data.datasets[3].hidden = false
+        myChart.data.datasets[4].hidden = true
         myChart.data.datasets[5].hidden = true
-        myChart.data.datasets[6].hidden = true
+        myChart.data.datasets[6].hidden = false
         myChart.data.datasets[7].hidden = true
-        myChart.data.datasets[8].hidden = false
-        myChart.data.datasets[9].hidden = true
-        myChart.data.datasets[10].hidden = true
-        myChart.data.datasets[11].hidden = true
+        myChart.data.datasets[8].hidden = true
         myChart.update()
     })
 
@@ -281,14 +235,11 @@ $( document ).ready(function() {
         myChart.data.datasets[1].hidden = false
         myChart.data.datasets[2].hidden = true
         myChart.data.datasets[3].hidden = true
-        myChart.data.datasets[4].hidden = true
-        myChart.data.datasets[5].hidden = false
+        myChart.data.datasets[4].hidden = false
+        myChart.data.datasets[5].hidden = true
         myChart.data.datasets[6].hidden = true
-        myChart.data.datasets[7].hidden = true
+        myChart.data.datasets[7].hidden = false
         myChart.data.datasets[8].hidden = true
-        myChart.data.datasets[9].hidden = false
-        myChart.data.datasets[10].hidden = true
-        myChart.data.datasets[11].hidden = true
         myChart.update()
     })
 
@@ -298,31 +249,13 @@ $( document ).ready(function() {
         myChart.data.datasets[2].hidden = false
         myChart.data.datasets[3].hidden = true
         myChart.data.datasets[4].hidden = true
-        myChart.data.datasets[5].hidden = true
-        myChart.data.datasets[6].hidden = false
+        myChart.data.datasets[5].hidden = false
+        myChart.data.datasets[6].hidden = true
         myChart.data.datasets[7].hidden = true
-        myChart.data.datasets[8].hidden = true
-        myChart.data.datasets[9].hidden = true
-        myChart.data.datasets[10].hidden = false
-        myChart.data.datasets[11].hidden = true
+        myChart.data.datasets[8].hidden = false
         myChart.update()
     })
 
-    $('#visibility').click(function(){
-        myChart.data.datasets[0].hidden = true
-        myChart.data.datasets[1].hidden = true
-        myChart.data.datasets[2].hidden = true
-        myChart.data.datasets[3].hidden = false
-        myChart.data.datasets[4].hidden = true
-        myChart.data.datasets[5].hidden = true
-        myChart.data.datasets[6].hidden = true
-        myChart.data.datasets[7].hidden = false
-        myChart.data.datasets[8].hidden = true
-        myChart.data.datasets[9].hidden = true
-        myChart.data.datasets[10].hidden = true
-        myChart.data.datasets[11].hidden = false
-        myChart.update()
-    })
     
     function compare( a, b ) {
         if ( a.date < b.date ){
