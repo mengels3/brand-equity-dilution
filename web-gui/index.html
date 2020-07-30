@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Brand Extension Dilution Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script type="text/javascript" src="bedi_charts.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h2>Brand Extension Dilution Index (BEDI)</h1>
+  <p>BEDI development over time for selected brands and their brand extension. Based on social media data, analyzed with python.</p>
+  <p style="font-size: 14px">Developed in COINs Seminar (summer term 2020) by Mika Engels, Nicolas Graetz, Jonas Kaiser, Paul Schütz</p>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" >
+  		<button class="btn btn-block btn-warning col-sm-12" id="all">All Lines</button>
+    </div>
+  	<div class="col-sm-6" style="margin-top: 10px">
+  		<button class="btn btn-block btn-primary col-sm-4" id="audi">All Audi e-tron Lines</button>
+  		<button class="btn btn-block btn-danger col-sm-4" id="vw">All VW id.3 Lines</button>
+  		<button class="btn btn-block btn-success col-sm-4" id="mercedes">All Mercedes EQC Lines</button>
+  	</div>
+  	<div class="col-sm-6" style="margin-top: 10px">
+  		<button class="btn btn-block btn-primary col-sm-3" id="bedi">All BEDI Lines</button>
+  		<button class="btn btn-block btn-danger col-sm-3" id="sentiment">All Sentiment Lines</button>
+  		<button class="btn btn-block btn-success col-sm-3" id="likelihood">All Likelihood Lines</button>
+  	</div>
+    <div class="col-sm-12" style="margin-top: 20px">
+    	<canvas id="BEDICharts" width="400" height="175"></canvas>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
